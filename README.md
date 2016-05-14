@@ -12,7 +12,7 @@ The main task was to create a simple Tic-Tac-Toe games, wich can handle all typi
 - [ ] Stats
 - [ ] Savegame
 - [ ] Colors
-- [ ] KI
+- [ ] AI
 - [ ] Reworked Images
 - [X] Changelog
 
