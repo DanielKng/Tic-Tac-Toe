@@ -37,7 +37,7 @@ namespace Tic_Tac_Toe_WF
                 //Sends a Cast to buttons
                 Button buttonsFirst = (Button)sender;
                 if (player)
-                {       
+                {
                     //First, we need to delete everything except the first letter
                     string firstLetterP1 = Playernames.player1Name.Substring(0, 1);
                     //Set the first letter to the Button
@@ -134,16 +134,16 @@ namespace Tic_Tac_Toe_WF
             //Check for winners
             if (winner)
             {
-                //We need to disable the Buttons if you won
-                DisableWinButton();
                 //Player True, O won
                 if (player)
                 {
-               //Shows the winner Animation and changes the Text to the Winning player
+                    //Shows the winner Animation and changes the Text to the Winning player
                     Winscreen loadWinscreen = new Winscreen();
                     //Changes the "Value" and therefore the content in the Textbox from Winscreen.cs
                     loadWinscreen.TextBoxValue = Playernames.player2Name + " wins! Congratulations!";
                     loadWinscreen.Show();
+                    //Github Issue #3 https://github.com/DanielKng/Tic-Tac-Toe/issues/3
+                    DisableWinButton();
                 }
                 //Is it false, Player O won
                 else
@@ -153,13 +153,17 @@ namespace Tic_Tac_Toe_WF
                     //Changes the "Value" and therefore the content in the Textbox from Winscreen.cs
                     loadWinscreen.TextBoxValue = Playernames.player1Name + " wins! Congratulations!";
                     loadWinscreen.Show();
+                    //Github Issue #3 https://github.com/DanielKng/Tic-Tac-Toe/issues/3
+                    DisableWinButton();
                 }
             }
             else
             {
-                if(playerSteps == 9)
+                if (playerSteps == 9)
                 {
                     MessageBox.Show("Draw. No one wins!", "Standoff", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    //Github Issue #3 https://github.com/DanielKng/Tic-Tac-Toe/issues/3
+                    DisableWinButton();
                 }
             }
         }
@@ -170,10 +174,13 @@ namespace Tic_Tac_Toe_WF
         private void DisableWinButton()
         {
             //We have to use a try, because we got an exception on (Button)c;
-            try {
-                foreach (Control c in Controls)
-                {
 
+            foreach (Control c in Controls)
+            {
+                try
+                {
+                    //Github Issue #3 https://github.com/DanielKng/Tic-Tac-Toe/issues/3
+                    //The try & catch loop was outside of "foreeach" which leads to a unproper functionality
                     //Send the Cast
                     Button buttons = (Button)c;
                     //Disable all Buttons
@@ -182,10 +189,10 @@ namespace Tic_Tac_Toe_WF
                     Exit_Game.Enabled = true;
                     New_Game.Enabled = true;
                 }
+                catch { }
             }
-            catch { }
         }
-        
+
         private void New_Game_Click(object sender, EventArgs e)
         {
             if (change_names.Checked)
