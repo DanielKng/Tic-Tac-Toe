@@ -105,7 +105,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Playernames";
-            this.Text = "Playernames";
+            this.Text = "Ultimate Tic-Tac-Toe";
             this.ResumeLayout(false);
             this.PerformLayout();
 

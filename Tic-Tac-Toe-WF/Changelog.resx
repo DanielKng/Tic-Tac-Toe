@@ -143,11 +143,11 @@ V-0.0.53-A
 -Language mistakes fixed
 
 V-0.0.67-B
---BETA STATUS! WOHOO!
+-BETA STATUS! WOHOO!
 -Added playernames!
 -Changed the Winscreen, so the annoying Pop-Up is gone!
 -You are able to change the Names on the fly
--Which turn is it? Shows on game
+-Shows which Player is next
 -Language mistakes fixed</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />

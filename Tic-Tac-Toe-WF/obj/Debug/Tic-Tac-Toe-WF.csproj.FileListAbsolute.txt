@@ -10,3 +10,6 @@ e:\users\daniel könning\documents\visual studio 2015\Projects\Tic-Tac-Toe-WF\Ti
 e:\users\daniel könning\documents\visual studio 2015\Projects\Tic-Tac-Toe-WF\Tic-Tac-Toe-WF\obj\Debug\Tic_Tac_Toe_WF.Credits.resources
 e:\users\daniel könning\documents\visual studio 2015\Projects\Tic-Tac-Toe-WF\Tic-Tac-Toe-WF\obj\Debug\Tic_Tac_Toe_WF.Game.resources
 e:\users\daniel könning\documents\visual studio 2015\Projects\Tic-Tac-Toe-WF\Tic-Tac-Toe-WF\obj\Debug\Tic_Tac_Toe_WF.Winscreen.resources
+E:\Users\Daniel Könning\Documents\Visual Studio 2015\Projects\Github\Tic-Tac-Toe\Tic-Tac-Toe-WF\bin\Debug\Tic-Tac-Toe-WF.exe.config
+E:\Users\Daniel Könning\Documents\Visual Studio 2015\Projects\Github\Tic-Tac-Toe\Tic-Tac-Toe-WF\obj\Debug\Tic-Tac-Toe-WF.exe
+E:\Users\Daniel Könning\Documents\Visual Studio 2015\Projects\Github\Tic-Tac-Toe\Tic-Tac-Toe-WF\obj\Debug\Tic-Tac-Toe-WF.pdb

@@ -67,7 +67,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(70, 13);
             this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "Build: 0.0.53-A";
+            this.textBox1.Text = "Build: 0.0.67-B";
             // 
             // Exit
             // 
