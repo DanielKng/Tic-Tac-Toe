@@ -1,12 +1,12 @@
 # Tic-Tac-Toe - A Windows Forms Project
 Started as a school project, ended in being multiple times bigger than assumed. 
-The main task was to create a simple Tic-Tac-Toe games, wich can handle all typical Tic-Tac-Toe ends.
+The main task was to create a simple Tic-Tac-Toe game, which can handle all typical Tic-Tac-Toe ends.
 
 ## Features
 - Main Menu with various Options
 - Playernames
-- A winning and loosing Animation
-- Change your Playernames on the fly
+- A winning and losing Animation
+- Change your playernames on the fly
 
 ## Upcoming Features
 - [ ] Stats
