@@ -1,4 +1,9 @@
 # Tic-Tac-Toe - A Windows Forms Project
+
+[![Changelog and Download](https://img.shields.io/badge/Downloads-v0.0.67--beta-blue.svg)](https://github.com/DanielKng/Tic-Tac-Toe/releases)
+
+---
+
 Started as a school project, ended in being multiple times bigger than assumed. 
 The main task was to create a simple Tic-Tac-Toe game, which can handle all typical Tic-Tac-Toe ends.
 
