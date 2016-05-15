@@ -38,11 +38,11 @@
             this.C3 = new System.Windows.Forms.Button();
             this.C2 = new System.Windows.Forms.Button();
             this.C1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.New_Game = new System.Windows.Forms.Button();
             this.Exit_Game = new System.Windows.Forms.Button();
             this.change_names = new System.Windows.Forms.CheckBox();
             this.player_turn = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,16 +136,6 @@
             this.C1.UseVisualStyleBackColor = true;
             this.C1.Click += new System.EventHandler(this.button_click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(486, 93);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // New_Game
             // 
             this.New_Game.Location = new System.Drawing.Point(13, 402);
@@ -186,6 +176,16 @@
             this.player_turn.TabIndex = 13;
             this.player_turn.Text = "It\'s your turn, X";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(486, 93);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,7 +219,6 @@
         #endregion
 
         private System.Windows.Forms.Button A1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button A2;
         private System.Windows.Forms.Button A3;
         private System.Windows.Forms.Button B3;
@@ -232,5 +231,6 @@
         private System.Windows.Forms.Button Exit_Game;
         public System.Windows.Forms.CheckBox change_names;
         private System.Windows.Forms.Label player_turn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -37,7 +37,7 @@ namespace Tic_Tac_Toe_WF
         //If clicked on Start, open the Game!
         private void Start_Click(object sender, EventArgs e)
         {
-            if(enable_playernames.Checked == true)
+            if (enable_playernames.Checked == true)
             {
                 //Load custom names
                 Playernames loadPlayernames = new Playernames();
@@ -47,16 +47,22 @@ namespace Tic_Tac_Toe_WF
             else
             {
                 //Load default names
+                Playernames.player1Name = "X";
+                Playernames.player2Name = "O";
                 Game openGame = new Game();
                 openGame.Show();
                 this.Hide();
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void changelog_Click(object sender, EventArgs e)
         {
+            //Load the PDF a bit before the UI gets called
             Changelog loadChangelog = new Changelog();
+            loadChangelog.changelog_browser.Navigate("http://puu.sh/oSCFr/7e47c74977.png");
+            //Call the UI
             loadChangelog.Show();
+
         }
     }
 }

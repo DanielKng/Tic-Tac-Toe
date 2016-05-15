@@ -29,39 +29,34 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Changelog));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.changelog_browser = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
-            // textBox1
+            // changelog_browser
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(13, 13);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(554, 782);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TabStop = false;
-            this.textBox1.Text = resources.GetString("textBox1.Text");
+            this.changelog_browser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.changelog_browser.Location = new System.Drawing.Point(0, 0);
+            this.changelog_browser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.changelog_browser.Name = "changelog_browser";
+            this.changelog_browser.Size = new System.Drawing.Size(687, 732);
+            this.changelog_browser.TabIndex = 0;
             // 
             // Changelog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(579, 807);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(687, 732);
+            this.Controls.Add(this.changelog_browser);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Changelog";
             this.Text = "Ultimate Tic-Tac-Toe";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.WebBrowser changelog_browser;
     }
 }

@@ -161,7 +161,10 @@ namespace Tic_Tac_Toe_WF
             {
                 if (playerSteps == 9)
                 {
-                    MessageBox.Show("Draw. No one wins!", "Standoff", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    //Shows the winner Animation and changes the Text to the Winning player
+                    GameOver_Screen loadGameOver = new GameOver_Screen();
+                    //Changes the "Value" and therefore the content in the Textbox from Winscreen.cs
+                    loadGameOver.Show();
                     //Github Issue #3 https://github.com/DanielKng/Tic-Tac-Toe/issues/3
                     DisableWinButton();
                 }
@@ -192,20 +195,40 @@ namespace Tic_Tac_Toe_WF
                 catch { }
             }
         }
-
+        //If you click on "New Game"
         private void New_Game_Click(object sender, EventArgs e)
         {
+            //And have checked the Playname Checkbox
             if (change_names.Checked)
             {
+                //Open up the UI 
                 Playernames loadPlayernames = new Playernames();
                 loadPlayernames.Show();
                 this.Hide();
             }
+            //Else, you did not checked the Box, normal "New-Game"
             else
             {
-                this.Close();
-                Game newGame = new Game();
-                newGame.Show();
+                //Reset which Player is next
+                player = true;
+                //Reset how many clicks are done
+                playerSteps = 0;
+                //I cant explain this, but it works.
+                foreach (Control c in Controls)
+                {
+                    try
+                    {
+                        Button b = (Button)c;
+                        //Re-Enable all Buttons
+                        b.Enabled = true;
+                        //Reset the Text
+                        b.Text = "";
+                        //Because the Text on the other Buttons gets reset too, we have to rewrite them!
+                        New_Game.Text = "New Game";
+                        Exit_Game.Text = "Exit";
+                    }
+                    catch { }
+                }
             }
         }
         private void Exit_Game_Click(object sender, EventArgs e)
