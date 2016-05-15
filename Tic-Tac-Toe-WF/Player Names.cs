@@ -15,8 +15,6 @@ namespace Tic_Tac_Toe_WF
     {
         public static string player1Name = "";
         public static string player2Name = "";
-        int errorCounter = 0;
-
         public Playernames()
         {
             InitializeComponent();
@@ -28,10 +26,11 @@ namespace Tic_Tac_Toe_WF
 
             player1Name = Player1.Text;
             player2Name = Player2.Text;
-            //Use Uppercase only!
 
-            player1Name = player1Name.ToUpper();
-            player2Name = player2Name.ToUpper();
+            //Use Uppercase only! ~ Deleted, because it looks ugly
+
+            //player1Name = player1Name.ToUpper();
+            //player2Name = player2Name.ToUpper();
 
             //Check if the Boxes contain any letters, if they contain anything else than letters or nothing - Error
             //true if it doesn't contain letters
@@ -58,6 +57,8 @@ namespace Tic_Tac_Toe_WF
             {
                 //Load the Game
                 Game loadGame = new Game();
+                //This is important. With this piece of code the Window gets centered and is at the same place as all other Windows!               
+                loadGame.StartPosition = FormStartPosition.CenterScreen;
                 loadGame.Show();
                 this.Hide();
             }

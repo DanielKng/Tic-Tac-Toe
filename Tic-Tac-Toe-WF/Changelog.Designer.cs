@@ -50,6 +50,7 @@
             this.Controls.Add(this.changelog_browser);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Changelog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ultimate Tic-Tac-Toe";
             this.ResumeLayout(false);
 

@@ -41,7 +41,7 @@
             this.pictureBox1.BackgroundImage = global::Tic_Tac_Toe_WF.Properties.Resources.Header;
             this.pictureBox1.Location = new System.Drawing.Point(12, 13);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(485, 106);
+            this.pictureBox1.Size = new System.Drawing.Size(485, 97);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -57,8 +57,8 @@
             this.textBox1.Size = new System.Drawing.Size(485, 116);
             this.textBox1.TabIndex = 0;
             this.textBox1.TabStop = false;
-            this.textBox1.Text = "Developers: Daniel Könning, Nico Brüning and Jan Ihsecke\r\nDesign and Implementation: " +
-    "Daniel Könning\r\nIdea: Christof Peek\r\n";
+            this.textBox1.Text = "Developers: Daniel Könning, Nico Brüning and Jan Ihsecke\r\nDesign and Implementati" +
+    "on: Daniel Könning\r\nIdea: Christof Peek\r\n";
             // 
             // Back
             // 
