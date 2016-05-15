@@ -149,7 +149,7 @@ namespace Tic_Tac_Toe_WF
                     //Shows how often Player XY won
                     player2_stats_counter.Text = "won " + player2Stats.ToString() + " time(s)";
                     //Shows the winner Animation and changes the Text to the Winning player
-                    Winscreen loadWinscreen = new Winscreen();
+                    Winscreen loadWinscreen = new Winscreen(this);
                     //Changes the "Value" and therefore the content in the Textbox from Winscreen.cs
                     loadWinscreen.TextBoxValue = Playernames.player2Name + " wins! Congratulations!";
                     loadWinscreen.Show();
@@ -165,7 +165,7 @@ namespace Tic_Tac_Toe_WF
                     //Shows how often Player XY won
                     player1_stats_counter.Text = "won " + player1Stats.ToString() + " time(s)";
                     //Shows the winner Animation and changes the Text to the Winning player
-                    Winscreen loadWinscreen = new Winscreen();
+                    Winscreen loadWinscreen = new Winscreen(this);
                     //Changes the "Value" and therefore the content in the Textbox from Winscreen.cs
                     loadWinscreen.TextBoxValue = Playernames.player1Name + " wins! Congratulations!";
                     loadWinscreen.StartPosition = FormStartPosition.CenterScreen;
