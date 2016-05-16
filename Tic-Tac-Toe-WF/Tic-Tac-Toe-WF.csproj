@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Tic_Tac_Toe_WF</RootNamespace>
-    <AssemblyName>Ultimate Tic-Tac-Toe</AssemblyName>
+    <AssemblyName>Tic-Tac-Toe-WF</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,9 +32,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>X-O.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -74,12 +71,6 @@
     <Compile Include="Game.Designer.cs">
       <DependentUpon>Game.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameOver Screen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GameOver Screen.Designer.cs">
-      <DependentUpon>GameOver Screen.cs</DependentUpon>
-    </Compile>
     <Compile Include="Player Names.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,9 +96,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Game.resx">
       <DependentUpon>Game.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GameOver Screen.resx">
-      <DependentUpon>GameOver Screen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Player Names.resx">
       <DependentUpon>Player Names.cs</DependentUpon>
@@ -139,14 +127,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Confetti.gif" />
+    <None Include="Resources\Header.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Main.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\Game.png" />
-    <None Include="Resources\Header.png" />
-    <None Include="Resources\Game Over.gif" />
-    <Content Include="X-O.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Confetti.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

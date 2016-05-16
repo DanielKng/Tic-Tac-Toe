@@ -51,14 +51,14 @@
             // 
             this.Player1.Location = new System.Drawing.Point(85, 84);
             this.Player1.Name = "Player1";
-            this.Player1.Size = new System.Drawing.Size(186, 20);
+            this.Player1.Size = new System.Drawing.Size(100, 20);
             this.Player1.TabIndex = 1;
             // 
             // Player2
             // 
-            this.Player2.Location = new System.Drawing.Point(85, 150);
+            this.Player2.Location = new System.Drawing.Point(85, 133);
             this.Player2.Name = "Player2";
-            this.Player2.Size = new System.Drawing.Size(186, 20);
+            this.Player2.Size = new System.Drawing.Size(100, 20);
             this.Player2.TabIndex = 2;
             // 
             // label2
@@ -75,7 +75,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Light", 9.75F);
-            this.label3.Location = new System.Drawing.Point(14, 150);
+            this.label3.Location = new System.Drawing.Point(14, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 17);
             this.label3.TabIndex = 4;
@@ -84,7 +84,7 @@
             // Start
             // 
             this.Start.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Start.Location = new System.Drawing.Point(98, 226);
+            this.Start.Location = new System.Drawing.Point(94, 187);
             this.Start.Name = "Start";
             this.Start.Size = new System.Drawing.Size(75, 23);
             this.Start.TabIndex = 5;

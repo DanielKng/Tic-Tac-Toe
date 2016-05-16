@@ -11,12 +11,11 @@ using System.Windows.Forms;
 namespace Tic_Tac_Toe_WF
 {
     public partial class Game : Form
-    {      
+    {
         //If true = X if false = O
-        public bool player = true;
-        public int playerSteps = 0;
-        public int player1Stats = 0;
-        public int player2Stats = 0;
+        bool player = true;
+        String gameWon;
+        int playerSteps = 0;
         public Game()
         {
             InitializeComponent();
@@ -25,12 +24,6 @@ namespace Tic_Tac_Toe_WF
         }
         private void Game_Load(object sender, EventArgs e)
         {
-            //Set the Playername
-            player1_label.Text = "Player " + Playernames.player1Name;
-            player2_label.Text = "Player " + Playernames.player2Name;
-            //Shows how often Player XY won
-            player1_stats_counter.Text = "won " + player1Stats.ToString() + " time(s)";
-            player2_stats_counter.Text = "won " + player2Stats.ToString() + " time(s)";
         }
         public string PlayerTurnValue
         {
@@ -144,47 +137,31 @@ namespace Tic_Tac_Toe_WF
                 //Player True, O won
                 if (player)
                 {
-                    //We need to increase the Stats first
-                    player2Stats++;
-                    //Shows how often Player XY won
-                    player2_stats_counter.Text = "won " + player2Stats.ToString() + " time(s)";
                     //Shows the winner Animation and changes the Text to the Winning player
-                    Winscreen loadWinscreen = new Winscreen(this);
+                    Winscreen loadWinscreen = new Winscreen();
                     //Changes the "Value" and therefore the content in the Textbox from Winscreen.cs
                     loadWinscreen.TextBoxValue = Playernames.player2Name + " wins! Congratulations!";
                     loadWinscreen.Show();
                     //Github Issue #3 https://github.com/DanielKng/Tic-Tac-Toe/issues/3
                     DisableWinButton();
-                    this.Close();
                 }
                 //Is it false, Player O won
                 else
                 {
-                    //Increasing the Stats here also
-                    player1Stats++;
-                    //Shows how often Player XY won
-                    player1_stats_counter.Text = "won " + player1Stats.ToString() + " time(s)";
                     //Shows the winner Animation and changes the Text to the Winning player
-                    Winscreen loadWinscreen = new Winscreen(this);
+                    Winscreen loadWinscreen = new Winscreen();
                     //Changes the "Value" and therefore the content in the Textbox from Winscreen.cs
                     loadWinscreen.TextBoxValue = Playernames.player1Name + " wins! Congratulations!";
-                    loadWinscreen.StartPosition = FormStartPosition.CenterScreen;
-                    //Why Dialog? Because this should act like a Dialog
-                    loadWinscreen.ShowDialog();
+                    loadWinscreen.Show();
                     //Github Issue #3 https://github.com/DanielKng/Tic-Tac-Toe/issues/3
                     DisableWinButton();
-                    
                 }
             }
             else
             {
                 if (playerSteps == 9)
                 {
-                    //Shows the winner Animation and changes the Text to the Winning player
-                    GameOver_Screen loadGameOver = new GameOver_Screen();
-                    //Center Screen
-                    loadGameOver.StartPosition = FormStartPosition.CenterScreen;
-                    loadGameOver.Show();
+                    MessageBox.Show("Draw. No one wins!", "Standoff", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     //Github Issue #3 https://github.com/DanielKng/Tic-Tac-Toe/issues/3
                     DisableWinButton();
                 }
@@ -198,7 +175,7 @@ namespace Tic_Tac_Toe_WF
         {
             //We have to use a try, because we got an exception on (Button)c;
 
-            foreach (Control c in Controls)
+            foreach (Control c in Controls) 
             {
                 try
                 {
@@ -215,93 +192,27 @@ namespace Tic_Tac_Toe_WF
                 catch { }
             }
         }
-        //If you click on "New Game"
+
         private void New_Game_Click(object sender, EventArgs e)
         {
-            //And have checked the Playname Checkbox
-            if (change_names.Checked && stat_reset_checkbox.Checked)
+            if (change_names.Checked)
             {
-                //Reset the Stats!
-                player1Stats = 0;
-                player2Stats = 0;
-                //Show the new Stats
-                player1_stats_counter.Text = player1Stats.ToString();
-                player2_stats_counter.Text = player2Stats.ToString();
-                //Open up the UI 
+                //Shows the "Choose Playername" Window 
                 Playernames loadPlayernames = new Playernames();
-                //Center
-                loadPlayernames.StartPosition = FormStartPosition.CenterScreen;
                 loadPlayernames.Show();
-                this.Hide();
+                this.Close();
             }
-            else if (change_names.Checked)
-            {
-                //Open up the UI 
-                Playernames loadPlayernames = new Playernames();
-                //Center
-                loadPlayernames.StartPosition = FormStartPosition.CenterScreen;
-                loadPlayernames.ShowDialog();
-                this.Hide();
-            }
-            else if (stat_reset_checkbox.Checked)
-            {
-                //Reset the Stats!
-                player1Stats = 0;
-                player2Stats = 0;
-                //Shows how often Player XY won
-                player1_stats_counter.Text = "won " + player1Stats.ToString() + " time(s)";
-                player2_stats_counter.Text = "won " + player2Stats.ToString() + " time(s)";
-                //Reset which Player is next
-                player = true;
-                //Reset how many clicks are done
-                playerSteps = 0;
-                //I cant explain this, but it works.
-                foreach (Control c in Controls)
-                {
-                    try
-                    {
-                        Button b = (Button)c;
-                        //Re-Enable all Buttons
-                        b.Enabled = true;
-                        //Reset the Text
-                        b.Text = "";
-                        //Because the Text on the other Buttons gets reset too, we have to rewrite them!
-                        New_Game.Text = "New Game";
-                        Exit_Game.Text = "Exit";
-                    }
-                    catch { }
-                }
-            }
-            //Else, you did not checked the Box, normal "New-Game"
             else
             {
-                //Reset which Player is next
-                player = true;
-                //Reset how many clicks are done
-                playerSteps = 0;
-                //I cant explain this, but it works.
-                foreach (Control c in Controls)
-                {
-                    try
-                    {
-                        //Reset the Stats!
-                        player1Stats = 0;
-                        player2Stats = 0;
-                        //Shows how often Player XY won
-                        player1_stats_counter.Text = "won " + player1Stats.ToString() + " time(s)";
-                        player2_stats_counter.Text = "won " + player2Stats.ToString() + " time(s)";
-                        Button b = (Button)c;
-                        //Re-Enable all Buttons
-                        b.Enabled = true;
-                        //Reset the Text
-                        b.Text = "";
-                        //Because the Text on the other Buttons gets reset too, we have to rewrite them!
-                        New_Game.Text = "New Game";
-                        Exit_Game.Text = "Exit";
-                    }
-                    catch { }
-                }
+                //Closes the window
+                this.Close();
+                //Opens up the new Game
+                Game newGame = new Game();
+                newGame.Show();
             }
+            //Github Issue #4 https://github.com/DanielKng/Tic-Tac-Toe/issues/4 Bugfix
+            Winscreen winscreenClose = new Winscreen();
+            winscreenClose.CloseWinscreen();
         }
         private void Exit_Game_Click(object sender, EventArgs e)
         {

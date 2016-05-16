@@ -16,7 +16,7 @@ namespace Tic_Tac_Toe_WF
         {
             InitializeComponent();
         }
-        //Checks if "Exit" is pressed
+        //Checks if "Beenden" is pressed
         private void Exit_Click(object sender, EventArgs e)
         {
             //Exit the Application
@@ -27,7 +27,6 @@ namespace Tic_Tac_Toe_WF
         {
             //Open
             Form1 openMainMenu = new Form1();
-            //We dont need to center this! We did it already in the Window-Prefs!
             openMainMenu.Show();
             //Close Creditform
             this.Hide();

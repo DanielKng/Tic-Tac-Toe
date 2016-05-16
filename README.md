@@ -1,6 +1,6 @@
 # Tic-Tac-Toe - A Windows Forms Project
 
-[![Changelog and Download](https://img.shields.io/badge/Download-v0.0.96--beta-blue.svg)](https://github.com/DanielKng/Tic-Tac-Toe/releases)
+[![Changelog and Download](https://img.shields.io/badge/Downloads-v0.0.67--beta-blue.svg)](https://github.com/DanielKng/Tic-Tac-Toe/releases)
 
 ---
 
