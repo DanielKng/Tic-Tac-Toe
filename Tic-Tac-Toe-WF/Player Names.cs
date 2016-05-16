@@ -15,6 +15,7 @@ namespace Tic_Tac_Toe_WF
     {
         public static string player1Name = "";
         public static string player2Name = "";
+        Game loadGame = new Game();
         public Playernames()
         {
             InitializeComponent();
@@ -56,11 +57,23 @@ namespace Tic_Tac_Toe_WF
             else
             {
                 //Load the Game
-                Game loadGame = new Game();
                 //This is important. With this piece of code the Window gets centered and is at the same place as all other Windows!               
                 loadGame.StartPosition = FormStartPosition.CenterScreen;
                 loadGame.Show();
                 this.Hide();
+            }
+        }
+        //If you typed in the secret command, you can play against the AI!
+        private void Player2_TextChanged(object sender, EventArgs e)
+        {
+            //If the Text in our Player2 Textbox equals "Computer", you can play against the AI!
+            if (Player2.Text == "Computer")
+            {
+                loadGame.ai_enable = true;
+            }
+            else
+            {
+                loadGame.ai_enable = false;
             }
         }
     }

@@ -60,6 +60,7 @@
             this.Player2.Name = "Player2";
             this.Player2.Size = new System.Drawing.Size(186, 20);
             this.Player2.TabIndex = 2;
+            this.Player2.TextChanged += new System.EventHandler(this.Player2_TextChanged);
             // 
             // label2
             // 

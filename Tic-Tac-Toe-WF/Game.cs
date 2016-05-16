@@ -17,6 +17,8 @@ namespace Tic_Tac_Toe_WF
         public int playerSteps = 0;
         public int player1Stats = 0;
         public int player2Stats = 0;
+        //Now it gets interesting! Adding the AI!
+        public bool ai_enable = false;
         public Game()
         {
             InitializeComponent();
