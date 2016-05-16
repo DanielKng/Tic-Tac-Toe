@@ -41,7 +41,7 @@
             this.pictureBox1.BackgroundImage = global::Tic_Tac_Toe_WF.Properties.Resources.Header;
             this.pictureBox1.Location = new System.Drawing.Point(12, 13);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(485, 106);
+            this.pictureBox1.Size = new System.Drawing.Size(485, 97);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -57,8 +57,8 @@
             this.textBox1.Size = new System.Drawing.Size(485, 116);
             this.textBox1.TabIndex = 0;
             this.textBox1.TabStop = false;
-            this.textBox1.Text = "Entwicklung: Daniel Könning, Nico Brüning und Jan Ihsecke\r\nDesign und Umsetzung: " +
-    "Daniel Könning\r\nIdee: Christof Peek\r\n";
+            this.textBox1.Text = "Developers: Daniel Könning, Nico Brüning and Jan Ihsecke\r\nDesign and Implementati" +
+    "on: Daniel Könning\r\nIdea: Christof Peek\r\n";
             // 
             // Back
             // 
@@ -66,7 +66,7 @@
             this.Back.Name = "Back";
             this.Back.Size = new System.Drawing.Size(75, 23);
             this.Back.TabIndex = 1;
-            this.Back.Text = "Zurück";
+            this.Back.Text = "Back";
             this.Back.UseVisualStyleBackColor = true;
             this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
@@ -76,7 +76,7 @@
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(75, 23);
             this.Exit.TabIndex = 2;
-            this.Exit.Text = "Beenden";
+            this.Exit.Text = "Exit";
             this.Exit.UseVisualStyleBackColor = true;
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
