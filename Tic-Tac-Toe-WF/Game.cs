@@ -175,7 +175,7 @@ namespace Tic_Tac_Toe_WF
         {
             //We have to use a try, because we got an exception on (Button)c;
 
-            foreach (Control c in Controls)
+            foreach (Control c in Controls) 
             {
                 try
                 {
@@ -197,16 +197,22 @@ namespace Tic_Tac_Toe_WF
         {
             if (change_names.Checked)
             {
+                //Shows the "Choose Playername" Window 
                 Playernames loadPlayernames = new Playernames();
                 loadPlayernames.Show();
-                this.Hide();
+                this.Close();
             }
             else
             {
+                //Closes the window
                 this.Close();
+                //Opens up the new Game
                 Game newGame = new Game();
                 newGame.Show();
             }
+            //Github Issue #4 https://github.com/DanielKng/Tic-Tac-Toe/issues/4 Bugfix
+            Winscreen winscreenClose = new Winscreen();
+            winscreenClose.CloseWinscreen();
         }
         private void Exit_Game_Click(object sender, EventArgs e)
         {
