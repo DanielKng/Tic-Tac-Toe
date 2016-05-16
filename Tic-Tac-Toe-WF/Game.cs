@@ -92,9 +92,10 @@ namespace Tic_Tac_Toe_WF
             playerSteps++;
             //Check for the Winner after every Step!
             CheckWinner();
-            if(!player)
+            if (!player)
             {
             }
+        }
         //As the Worksheet says: Check every possible end. Vertical, Horizontal, etc
         private void CheckWinner()
         {
