@@ -12,14 +12,18 @@ The main task was to create a simple Tic-Tac-Toe game, which can handle all typi
 - Playernames
 - A winning and losing Animation
 - Change your playernames on the fly
+- Stats
+- AI
+- Changelog
 
 ## Upcoming Features
-- [ ] Stats
+- [X] Stats
 - [ ] Savegame
 - [ ] Colors
-- [ ] AI
+- [X] AI
 - [ ] Reworked Images
 - [X] Changelog
+- [ ] Eastereggs
 
 Some features, such as savegames, may seem useless - and they are. But this Project is more a learning task for me and others. So please keep that in mind!
 
