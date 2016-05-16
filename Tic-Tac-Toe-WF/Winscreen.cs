@@ -22,10 +22,5 @@ namespace Tic_Tac_Toe_WF
             get { return winscreenTextbox.Text; }
             set { winscreenTextbox.Text = value; }
         }
-        //Github Issue #4 https://github.com/DanielKng/Tic-Tac-Toe/issues/4 Bugfix
-        public void CloseWinscreen()
-        {
-            this.Hide();
-        }
     }
 }
