@@ -30,6 +30,10 @@ namespace Tic_Tac_Toe_WF
             //Set the Playername
             player1_label.Text = "Player " + Playernames.player1Name;
             player2_label.Text = "Player " + Playernames.player2Name;
+            if(Playernames.player2Name == "AI")
+            {
+                player2_label.Text = "1337 Cheater";
+            }
             //Shows how often Player XY won
             player1_stats_counter.Text = "won " + player1Stats.ToString() + " time(s)";
             player2_stats_counter.Text = "won " + player2Stats.ToString() + " time(s)";
@@ -240,6 +244,12 @@ namespace Tic_Tac_Toe_WF
                     buttons.Text = "X";
                     PlayerTurnValue = "It's your turn, " + Playernames.player2Name;
                 }
+                //This is the AI stat
+                else if(Playernames.player1Name == "X" && Playernames.player2Name == "AI")
+                {
+                    buttons.Text = "A";
+                    PlayerTurnValue = "It's your turn, " + Playernames.player1Name;
+                }
                 else
                 {
                     //False! Player O!
@@ -256,7 +266,7 @@ namespace Tic_Tac_Toe_WF
             //Check for the Winner after every Step!
             CheckWinner();
             //Call the AI 
-            if ((!player) && ai_enable)
+           if ((!player) && ai_enable)
             {
                 ai_move();
             }
@@ -264,8 +274,6 @@ namespace Tic_Tac_Toe_WF
         //As the Worksheet says: Check every possible end. Vertical, Horizontal, etc
         private void CheckWinner()
         {
-            //INPORTANT TO CLOSE THE WINDOW TROUGH THE NEW GAME BUTTON!
-            Winscreen loadWinscreen = new Winscreen(this);
             //There cant be a winner at the beginning
             bool winner = false;
 
@@ -322,11 +330,12 @@ namespace Tic_Tac_Toe_WF
                     player2_stats_counter.Text = "won " + player2Stats.ToString() + " time(s)";
                     //Shows the winner Animation and changes the Text to the Winning player
                     //Changes the "Value" and therefore the content in the Textbox from Winscreen.cs
+                    //INPORTANT TO CLOSE THE WINDOW TROUGH THE NEW GAME BUTTON!
+                    Winscreen loadWinscreen = new Winscreen(this);
                     loadWinscreen.TextBoxValue = Playernames.player2Name + " wins! Congratulations!";
                     loadWinscreen.Show();
                     //Github Issue #3 https://github.com/DanielKng/Tic-Tac-Toe/issues/3
                     DisableWinButton();
-                    this.Close();
                 }
                 //Is it false, Player O won
                 else
@@ -336,6 +345,8 @@ namespace Tic_Tac_Toe_WF
                     //Shows how often Player XY won
                     player1_stats_counter.Text = "won " + player1Stats.ToString() + " time(s)";
                     //Shows the winner Animation and changes the Text to the Winning player
+                    //INPORTANT TO CLOSE THE WINDOW TROUGH THE NEW GAME BUTTON!
+                    Winscreen loadWinscreen = new Winscreen(this);
                     //Changes the "Value" and therefore the content in the Textbox from Winscreen.cs
                     loadWinscreen.TextBoxValue = Playernames.player1Name + " wins! Congratulations!";
                     loadWinscreen.StartPosition = FormStartPosition.CenterScreen;
@@ -343,7 +354,6 @@ namespace Tic_Tac_Toe_WF
                     loadWinscreen.Show();
                     //Github Issue #3 https://github.com/DanielKng/Tic-Tac-Toe/issues/3
                     DisableWinButton();
-
                 }
             }
             else

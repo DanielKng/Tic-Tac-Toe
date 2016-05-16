@@ -177,9 +177,10 @@
             this.player_turn.Font = new System.Drawing.Font("Segoe UI Light", 15F);
             this.player_turn.Location = new System.Drawing.Point(191, 109);
             this.player_turn.Name = "player_turn";
-            this.player_turn.Size = new System.Drawing.Size(137, 28);
+            this.player_turn.Size = new System.Drawing.Size(181, 28);
             this.player_turn.TabIndex = 13;
-            this.player_turn.Text = "It\'s your turn, X";
+            this.player_turn.Text = "Let the Game begin!";
+            this.player_turn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 

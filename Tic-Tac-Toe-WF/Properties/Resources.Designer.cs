@@ -22,7 +22,7 @@ namespace Tic_Tac_Toe_WF.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Tic_Tac_Toe_WF.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Tic_Tac_Toe_WF.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Tic_Tac_Toe_WF.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,9 +61,30 @@ namespace Tic_Tac_Toe_WF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to v-0.0.96-beta
+        ///	- Bugfixes for Issue #5 and #6
+        ///	- New „Draw“ (or losing) screen
+        ///	- Changelog is no longer a Text, it now calls a PDF
+        ///	- The „New Game“-Button no longer opens a new Window, it resets the Game on the fly
+        ///v-0.0.67-beta
+        ///	- BETA STATUS! WOHOO!
+        ///	- Added playernames
+        ///	- Changed the Winscreen, so the annoying Pop-Up is gone
+        ///	- You are able to change the Names on the fly
+        ///	- Shows which Player is next
+        ///	- Language mistakes fixed
+        ///	- Bugfixes (Issue #3 ).
+        /// </summary>
+        public static string changelog {
+            get {
+                return ResourceManager.GetString("changelog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Confetti {
+        public static System.Drawing.Bitmap Confetti {
             get {
                 object obj = ResourceManager.GetObject("Confetti", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +94,7 @@ namespace Tic_Tac_Toe_WF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Game {
+        public static System.Drawing.Bitmap Game {
             get {
                 object obj = ResourceManager.GetObject("Game", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +104,7 @@ namespace Tic_Tac_Toe_WF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Game_Over {
+        public static System.Drawing.Bitmap Game_Over {
             get {
                 object obj = ResourceManager.GetObject("Game_Over", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +114,7 @@ namespace Tic_Tac_Toe_WF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Header {
+        public static System.Drawing.Bitmap Header {
             get {
                 object obj = ResourceManager.GetObject("Header", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +124,7 @@ namespace Tic_Tac_Toe_WF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Main {
+        public static System.Drawing.Bitmap Main {
             get {
                 object obj = ResourceManager.GetObject("Main", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

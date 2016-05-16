@@ -113,7 +113,7 @@
       <DependentUpon>Player Names.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -146,6 +146,7 @@
     <None Include="Resources\Game.png" />
     <None Include="Resources\Header.png" />
     <None Include="Resources\Game Over.gif" />
+    <None Include="Resources\changelog.txt" />
     <Content Include="X-O.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

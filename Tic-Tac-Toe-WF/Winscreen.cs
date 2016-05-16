@@ -29,7 +29,12 @@ namespace Tic_Tac_Toe_WF
        
         private void winscreen_again_Click(object sender, EventArgs e)
         {
+            //Load Classes
+            Playernames loadPlayernames = new Playernames();
             Game loadGame = new Game();
+            //Center
+            loadPlayernames.StartPosition = FormStartPosition.CenterScreen;
+            loadGame.StartPosition = FormStartPosition.CenterScreen;
             //And have checked the Playname Checkbox
             if (changename_winscreen.Checked && reset_stats_winscreen.Checked)
             {
@@ -44,19 +49,12 @@ namespace Tic_Tac_Toe_WF
                 //Closes the old Playfield. Thanks to http://stackoverflow.com/users/5174469/mong-zhu for answering my Question! http://stackoverflow.com/questions/37243401/close-form2-from-form3-that-has-been-opened-in-form1
 
                 this.oldPlayfield.Close();
-
                 //Open up the UI 
-                Playernames loadPlayernames = new Playernames();
-                //Center
-                loadPlayernames.StartPosition = FormStartPosition.CenterScreen;
                 loadPlayernames.ShowDialog();
             }
             else if (changename_winscreen.Checked)
             {
                 //Open up the UI 
-                Playernames loadPlayernames = new Playernames();
-                //Center
-                loadPlayernames.StartPosition = FormStartPosition.CenterScreen;
                 loadPlayernames.ShowDialog();
                 this.Hide();
             }
@@ -72,11 +70,12 @@ namespace Tic_Tac_Toe_WF
                 loadGame.player = true;
                 //Reset how many clicks are done
                 loadGame.playerSteps = 0;
+                //Closes the old Playfield. Thanks to http://stackoverflow.com/users/5174469/mong-zhu for answering my Question! http://stackoverflow.com/questions/37243401/close-form2-from-form3-that-has-been-opened-in-form1
+                this.oldPlayfield.Close();
+                //Close the current form
+                Close();
                 //I cant explain this, but it works.
                 loadGame.Show();
-                //Closes the old Playfield. Thanks to http://stackoverflow.com/users/5174469/mong-zhu for answering my Question! http://stackoverflow.com/questions/37243401/close-form2-from-form3-that-has-been-opened-in-form1
-
-                this.oldPlayfield.Close();
             }
             //Else, you did not checked the Box, normal "New-Game"
             else
@@ -87,7 +86,10 @@ namespace Tic_Tac_Toe_WF
                 loadGame.playerSteps = 0;
                 //I cant explain this, but it works.                
                 loadGame.Show();
-                this.Close();
+                //Close the old Field
+                this.oldPlayfield.Close();
+                //Close the current Window
+                Close();
             }
         }
 

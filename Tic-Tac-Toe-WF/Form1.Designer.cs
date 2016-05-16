@@ -36,6 +36,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.changelog = new System.Windows.Forms.Button();
             this.enable_playernames = new System.Windows.Forms.CheckBox();
+            this.ai_enabled = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,8 +67,9 @@
             this.textBox1.Location = new System.Drawing.Point(414, 286);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(83, 13);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "Build: 0.1.37-beta";
+            this.textBox1.TabIndex = 0;
+            this.textBox1.TabStop = false;
+            this.textBox1.Text = "Build: 0.1.85-beta";
             // 
             // Exit
             // 
@@ -110,12 +112,21 @@
             this.enable_playernames.Text = "Enable Playernames";
             this.enable_playernames.UseVisualStyleBackColor = true;
             // 
+            // ai_enabled
+            // 
+            this.ai_enabled.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ai_enabled.Location = new System.Drawing.Point(448, 267);
+            this.ai_enabled.Name = "ai_enabled";
+            this.ai_enabled.Size = new System.Drawing.Size(49, 13);
+            this.ai_enabled.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(509, 311);
+            this.Controls.Add(this.ai_enabled);
             this.Controls.Add(this.enable_playernames);
             this.Controls.Add(this.changelog);
             this.Controls.Add(this.Exit);
@@ -143,6 +154,7 @@
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.Button changelog;
         private System.Windows.Forms.CheckBox enable_playernames;
+        private System.Windows.Forms.TextBox ai_enabled;
     }
 }
 

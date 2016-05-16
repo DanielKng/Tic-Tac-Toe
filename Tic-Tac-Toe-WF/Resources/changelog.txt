@@ -1,0 +1,25 @@
+v-0.1.85-beta
+	- Added a AI. To activate the AI, hover your mouse above the v-1.85-beta label,
+	  until you see the Text-cursor and type "ai_enable". Now click "Start".
+
+	- Added and Optimized Bugfixes for Issue #3, #4, #5 and #6
+	- New Winningscreen UI. You now can Exit, Reset and Restart your Game from it
+	- New losing screen. Gone is the annyoing Message, now you have a annoying Animation!
+	- Small AI Easteregg (It's obviously - for now!)
+	- The Changelog is now a embedded Resource
+	- Code is now a bit more clean
+
+v-0.0.96-beta
+	- Bugfixes for Issue #5 and #6
+	- New „Draw“ (or losing) screen
+	- Changelog is no longer a Text, it now calls a PDF
+	- The „New Game“-Button no longer opens a new Window, it resets the Game on the fly
+
+v-0.0.67-beta
+	- BETA STATUS! WOHOO!
+	- Added playernames
+	- Changed the Winscreen, so the annoying Pop-Up is gone
+	- You are able to change the Names on the fly
+	- Shows which Player is next
+	- Language mistakes fixed
+	- Bugfixes (Issue #3 )
