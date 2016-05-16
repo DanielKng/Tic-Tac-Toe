@@ -12,8 +12,9 @@ namespace Tic_Tac_Toe_WF
 {
     public partial class Winscreen : Form
     {
+        // Variable to catch the old playfield
         Game oldPlayfield;
-
+        // the old playfield is passed in the constructor
         public Winscreen(Game opf)
         {
             this.oldPlayfield = opf;
@@ -39,8 +40,11 @@ namespace Tic_Tac_Toe_WF
                 //Show the new Stats
                 loadGame.player1_stats_counter.Text = loadGame.player1Stats.ToString();
                 loadGame.player2_stats_counter.Text = loadGame.player2Stats.ToString();
-                //Kill the actual Game
-                
+
+                //Closes the old Playfield. Thanks to http://stackoverflow.com/users/5174469/mong-zhu for answering my Question! http://stackoverflow.com/questions/37243401/close-form2-from-form3-that-has-been-opened-in-form1
+
+                this.oldPlayfield.Close();
+
                 //Open up the UI 
                 Playernames loadPlayernames = new Playernames();
                 //Center
@@ -71,6 +75,7 @@ namespace Tic_Tac_Toe_WF
                 //I cant explain this, but it works.
                 loadGame.Show();
                 //Closes the old Playfield. Thanks to http://stackoverflow.com/users/5174469/mong-zhu for answering my Question! http://stackoverflow.com/questions/37243401/close-form2-from-form3-that-has-been-opened-in-form1
+
                 this.oldPlayfield.Close();
             }
             //Else, you did not checked the Box, normal "New-Game"
