@@ -117,39 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="textBox1.Text" xml:space="preserve">
-    <value>V-0.0.1-A:
--Added various UI Parts
--Build the overall parts like Buttons that change if you click them
-
-V-0.0.11-A
--Added checks for all possible situations
--Renamed classes and variables
--Code overhaul
--Added Images
-
-V-0.0.30-A
--Bugfixes (Can be found in the Code-Comments)
--Created new Animation and Images
--Embedded Resources
--More code overhaul
--New Design
--Added "Exit" and "New Game" Buttons on the Game Screen
--Fixed a Bug in which the wrong player won
-
-V-0.0.53-A
--First Beta shipped to some good guys
--Added Changelog
--Language mistakes fixed
-
-V-0.0.67-B
--BETA STATUS! WOHOO!
--Added playernames!
--Changed the Winscreen, so the annoying Pop-Up is gone!
--You are able to change the Names on the fly
--Shows which Player is next
--Language mistakes fixed</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -34,7 +34,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Exit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.changelog = new System.Windows.Forms.Button();
             this.enable_playernames = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -63,11 +63,11 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(427, 286);
+            this.textBox1.Location = new System.Drawing.Point(414, 286);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(70, 13);
+            this.textBox1.Size = new System.Drawing.Size(83, 13);
             this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "Build: 0.0.67-B";
+            this.textBox1.Text = "Build: 0.1.37-beta";
             // 
             // Exit
             // 
@@ -81,23 +81,23 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBox1.Image = global::Tic_Tac_Toe_WF.Properties.Resources.Main;
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(485, 97);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // changelog
             // 
-            this.button1.Location = new System.Drawing.Point(12, 276);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Changelog";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.changelog.Location = new System.Drawing.Point(12, 276);
+            this.changelog.Name = "changelog";
+            this.changelog.Size = new System.Drawing.Size(75, 23);
+            this.changelog.TabIndex = 5;
+            this.changelog.Text = "Changelog";
+            this.changelog.UseVisualStyleBackColor = true;
+            this.changelog.Click += new System.EventHandler(this.changelog_Click);
             // 
             // enable_playernames
             // 
@@ -117,16 +117,17 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(509, 311);
             this.Controls.Add(this.enable_playernames);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.changelog);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Credits);
             this.Controls.Add(this.Start);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ultimate Tic-Tac-Toe";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -140,7 +141,7 @@
         private System.Windows.Forms.Button Credits;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button Exit;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button changelog;
         private System.Windows.Forms.CheckBox enable_playernames;
     }
 }
