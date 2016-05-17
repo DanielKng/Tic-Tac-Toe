@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+//Imported Library!
+using NAudio;
+using NAudio.Wave;
 using System.Windows.Forms;
+using System.IO;
+using System.Media;
+using System.Drawing;
+using System.Security.Permissions;
 
 namespace Tic_Tac_Toe_WF
 {
@@ -16,12 +16,13 @@ namespace Tic_Tac_Toe_WF
         {
             InitializeComponent();
         }
+
         private void Start_Click(object sender, EventArgs e)
         {
             //Load Classes
             Game loadGame = new Game();
             Playernames loadPlayernames = new Playernames();
-            
+
             //Center Windows
             loadGame.StartPosition = FormStartPosition.CenterScreen;
             loadPlayernames.StartPosition = FormStartPosition.CenterScreen;
@@ -29,11 +30,11 @@ namespace Tic_Tac_Toe_WF
             if (enable_playernames.Checked == true)
             {
                 loadPlayernames.Show();
-                this.Hide();
+                Hide();
             }
             else
             {
-                if(ai_enabled.Text == "ai_enable")
+                if (ai_enabled.Text == "ai_enable")
                 {
                     loadGame.ai_enable = true;
                     Playernames.player1Name = "X";
@@ -66,13 +67,38 @@ namespace Tic_Tac_Toe_WF
         }
 
         private void changelog_Click(object sender, EventArgs e)
-        {           
+        {
             Changelog loadChangelog = new Changelog();
             //We now load the Changelog trough a file! Thanks to Patrick for the Idea!
             loadChangelog.changelog_box.Text = Properties.Resources.changelog;
             //Call the UI
             loadChangelog.Show();
 
+        }
+
+        private void options_Click(object sender, EventArgs e)
+        {
+            string[] dFiles = Directory.GetFiles(@"C:\Ultimate Tic-Tac-Toe\Audios");
+            string fCount = dFiles.Length.ToString();
+
+            //If we have have 4 files, we dont need to Open the Download Window
+            if (fCount != "4")
+            {
+                //True means you really want to get into the Options, otherwise the "You need to Download" PopUp shows every time
+                Properties.Settings.Default.options_clicked = true;
+                Options loadOptions = new Options();
+                Directory.CreateDirectory(@"C:\Ultimate Tic-Tac-Toe\Audios");
+                loadOptions.ShowDialog();
+            }
+            else
+            {
+                //True means you really want to get into the Options, otherwise the "You need to Download" PopUp shows every time
+                Properties.Settings.Default.options_clicked = false;
+                Options loadOptions = new Options();
+                Directory.CreateDirectory(@"C:\Ultimate Tic-Tac-Toe\Audios");
+                loadOptions.Positions();
+                loadOptions.ShowDialog();
+            }
         }
     }
 }

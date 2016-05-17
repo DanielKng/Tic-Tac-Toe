@@ -61,19 +61,16 @@ namespace Tic_Tac_Toe_WF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to v-0.0.96-beta
-        ///	- Bugfixes for Issue #5 and #6
-        ///	- New „Draw“ (or losing) screen
-        ///	- Changelog is no longer a Text, it now calls a PDF
-        ///	- The „New Game“-Button no longer opens a new Window, it resets the Game on the fly
-        ///v-0.0.67-beta
-        ///	- BETA STATUS! WOHOO!
-        ///	- Added playernames
-        ///	- Changed the Winscreen, so the annoying Pop-Up is gone
-        ///	- You are able to change the Names on the fly
-        ///	- Shows which Player is next
-        ///	- Language mistakes fixed
-        ///	- Bugfixes (Issue #3 ).
+        ///   Looks up a localized string similar to v-0.1.85-beta
+        ///	- Added a AI. To activate the AI, hover your mouse above the v-1.85-beta label,
+        ///	  until you see the Text-cursor and type &quot;ai_enable&quot;. Now click &quot;Start&quot;.
+        ///
+        ///	- Added and Optimized Bugfixes for Issue #3, #4, #5 and #6
+        ///	- New Winningscreen UI. You now can Exit, Reset and Restart your Game from it
+        ///	- New losing screen. Gone is the annyoing Message, now you have a annoying Animation!
+        ///	- Small AI Easteregg (It&apos;s obviously - for now!)
+        ///	- The Changelog is now a embedded Resource
+        ///	- Code is no [rest of string was truncated]&quot;;.
         /// </summary>
         public static string changelog {
             get {
@@ -84,9 +81,9 @@ namespace Tic_Tac_Toe_WF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Confetti {
+        public static System.Drawing.Bitmap checkbox {
             get {
-                object obj = ResourceManager.GetObject("Confetti", resourceCulture);
+                object obj = ResourceManager.GetObject("checkbox", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -127,6 +124,16 @@ namespace Tic_Tac_Toe_WF.Properties {
         public static System.Drawing.Bitmap Main {
             get {
                 object obj = ResourceManager.GetObject("Main", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap winner {
+            get {
+                object obj = ResourceManager.GetObject("winner", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

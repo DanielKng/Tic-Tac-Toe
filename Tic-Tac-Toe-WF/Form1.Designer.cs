@@ -37,6 +37,7 @@
             this.changelog = new System.Windows.Forms.Button();
             this.enable_playernames = new System.Windows.Forms.CheckBox();
             this.ai_enabled = new System.Windows.Forms.TextBox();
+            this.options = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             // 
             // Credits
             // 
-            this.Credits.Location = new System.Drawing.Point(220, 222);
+            this.Credits.Location = new System.Drawing.Point(12, 234);
             this.Credits.Name = "Credits";
             this.Credits.Size = new System.Drawing.Size(75, 23);
             this.Credits.TabIndex = 2;
@@ -120,12 +121,23 @@
             this.ai_enabled.Size = new System.Drawing.Size(49, 13);
             this.ai_enabled.TabIndex = 7;
             // 
+            // options
+            // 
+            this.options.Location = new System.Drawing.Point(220, 222);
+            this.options.Name = "options";
+            this.options.Size = new System.Drawing.Size(75, 23);
+            this.options.TabIndex = 8;
+            this.options.Text = "Options";
+            this.options.UseVisualStyleBackColor = true;
+            this.options.Click += new System.EventHandler(this.options_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(509, 311);
+            this.Controls.Add(this.options);
             this.Controls.Add(this.ai_enabled);
             this.Controls.Add(this.enable_playernames);
             this.Controls.Add(this.changelog);
@@ -146,15 +158,15 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Start;
         private System.Windows.Forms.Button Credits;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.Button changelog;
-        private System.Windows.Forms.CheckBox enable_playernames;
-        private System.Windows.Forms.TextBox ai_enabled;
+        private System.Windows.Forms.Button options;
+        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.CheckBox enable_playernames;
+        public System.Windows.Forms.TextBox ai_enabled;
     }
 }
 

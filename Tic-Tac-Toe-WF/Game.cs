@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,8 @@ namespace Tic_Tac_Toe_WF
         public int playerSteps = 0;
         public int player1Stats = 0;
         public int player2Stats = 0;
+        //Loading sounds
+        Options loadOptions = new Options();
         //Now it gets interesting! Adding the AI!
         public bool ai_enable = false;
         public Game()
@@ -333,7 +336,14 @@ namespace Tic_Tac_Toe_WF
                     //INPORTANT TO CLOSE THE WINDOW TROUGH THE NEW GAME BUTTON!
                     Winscreen loadWinscreen = new Winscreen(this);
                     loadWinscreen.TextBoxValue = Playernames.player2Name + " wins! Congratulations!";
-                    loadWinscreen.Show();
+                    loadWinscreen.StartPosition = FormStartPosition.CenterScreen;
+                    //Playing the Sound
+                    if (Properties.Settings.Default.enable_sounds)
+                    {
+                        SoundPlayer snd = new SoundPlayer(loadOptions.fileName_win);
+                        snd.Play();
+                    }
+                    loadWinscreen.ShowDialog();
                     //Github Issue #3 https://github.com/DanielKng/Tic-Tac-Toe/issues/3
                     DisableWinButton();
                 }
@@ -350,8 +360,13 @@ namespace Tic_Tac_Toe_WF
                     //Changes the "Value" and therefore the content in the Textbox from Winscreen.cs
                     loadWinscreen.TextBoxValue = Playernames.player1Name + " wins! Congratulations!";
                     loadWinscreen.StartPosition = FormStartPosition.CenterScreen;
-                    //Why Dialog? Because this should act like a Dialog
-                    loadWinscreen.Show();
+                    //Play Sound
+                    if (Properties.Settings.Default.enable_sounds)
+                    {
+                        SoundPlayer snd = new SoundPlayer(loadOptions.fileName_win);
+                        snd.Play();
+                    }
+                    loadWinscreen.ShowDialog();
                     //Github Issue #3 https://github.com/DanielKng/Tic-Tac-Toe/issues/3
                     DisableWinButton();
                 }
@@ -364,6 +379,11 @@ namespace Tic_Tac_Toe_WF
                     GameOver_Screen loadGameOver = new GameOver_Screen();
                     //Center Screen
                     loadGameOver.StartPosition = FormStartPosition.CenterScreen;
+                    if (Properties.Settings.Default.enable_sounds)
+                    {
+                        SoundPlayer snd = new SoundPlayer(loadOptions.fileName_lose);
+                        snd.Play();
+                    }
                     loadGameOver.Show();
                     //Github Issue #3 https://github.com/DanielKng/Tic-Tac-Toe/issues/3
                     DisableWinButton();

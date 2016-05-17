@@ -40,14 +40,14 @@
             // 
             // winscreenTextbox
             // 
-            this.winscreenTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
+            this.winscreenTextbox.BackColor = System.Drawing.Color.Black;
             this.winscreenTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.winscreenTextbox.Cursor = System.Windows.Forms.Cursors.Default;
             this.winscreenTextbox.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.winscreenTextbox.Location = new System.Drawing.Point(0, 0);
+            this.winscreenTextbox.Location = new System.Drawing.Point(-6, 0);
             this.winscreenTextbox.Multiline = true;
             this.winscreenTextbox.Name = "winscreenTextbox";
-            this.winscreenTextbox.Size = new System.Drawing.Size(501, 34);
+            this.winscreenTextbox.Size = new System.Drawing.Size(474, 34);
             this.winscreenTextbox.TabIndex = 0;
             this.winscreenTextbox.TabStop = false;
             this.winscreenTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -55,10 +55,10 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = global::Tic_Tac_Toe_WF.Properties.Resources.Confetti;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 27);
+            this.pictureBox1.Image = global::Tic_Tac_Toe_WF.Properties.Resources.winner;
+            this.pictureBox1.Location = new System.Drawing.Point(-16, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(501, 466);
+            this.pictureBox1.Size = new System.Drawing.Size(501, 481);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.WaitOnLoad = true;
@@ -67,7 +67,7 @@
             // 
             this.winscreen_again.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.winscreen_again.FlatAppearance.BorderSize = 0;
-            this.winscreen_again.Location = new System.Drawing.Point(12, 454);
+            this.winscreen_again.Location = new System.Drawing.Point(12, 444);
             this.winscreen_again.Name = "winscreen_again";
             this.winscreen_again.Size = new System.Drawing.Size(75, 23);
             this.winscreen_again.TabIndex = 1;
@@ -77,7 +77,8 @@
             // 
             // winscreen_exit
             // 
-            this.winscreen_exit.Location = new System.Drawing.Point(410, 454);
+            this.winscreen_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.winscreen_exit.Location = new System.Drawing.Point(380, 444);
             this.winscreen_exit.Name = "winscreen_exit";
             this.winscreen_exit.Size = new System.Drawing.Size(75, 23);
             this.winscreen_exit.TabIndex = 2;
@@ -88,8 +89,9 @@
             // changename_winscreen
             // 
             this.changename_winscreen.AutoSize = true;
-            this.changename_winscreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
-            this.changename_winscreen.Location = new System.Drawing.Point(12, 408);
+            this.changename_winscreen.BackColor = System.Drawing.Color.Black;
+            this.changename_winscreen.ForeColor = System.Drawing.Color.White;
+            this.changename_winscreen.Location = new System.Drawing.Point(12, 386);
             this.changename_winscreen.Name = "changename_winscreen";
             this.changename_winscreen.Size = new System.Drawing.Size(126, 17);
             this.changename_winscreen.TabIndex = 3;
@@ -99,8 +101,9 @@
             // reset_stats_winscreen
             // 
             this.reset_stats_winscreen.AutoSize = true;
-            this.reset_stats_winscreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
-            this.reset_stats_winscreen.Location = new System.Drawing.Point(12, 431);
+            this.reset_stats_winscreen.BackColor = System.Drawing.Color.Black;
+            this.reset_stats_winscreen.ForeColor = System.Drawing.Color.White;
+            this.reset_stats_winscreen.Location = new System.Drawing.Point(12, 409);
             this.reset_stats_winscreen.Name = "reset_stats_winscreen";
             this.reset_stats_winscreen.Size = new System.Drawing.Size(81, 17);
             this.reset_stats_winscreen.TabIndex = 4;
@@ -111,7 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(497, 489);
+            this.ClientSize = new System.Drawing.Size(467, 479);
             this.Controls.Add(this.reset_stats_winscreen);
             this.Controls.Add(this.changename_winscreen);
             this.Controls.Add(this.winscreen_exit);
