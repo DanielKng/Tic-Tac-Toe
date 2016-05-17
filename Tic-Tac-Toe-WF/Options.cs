@@ -116,13 +116,13 @@ namespace Tic_Tac_Toe_WF
             {
                 CheckboxesDisabel();
             }
-            else if(enable_darkmode.Checked && enable_music.Checked && !download_no)
+            else if(enable_darkmode.Checked && enable_music.Checked && download_no)
             { 
                 Properties.Settings.Default.darkmode_checked = false;
                 Properties.Settings.Default.enable_music = false;
             }
             //If you checked Dark Mode and the File exists
-            else if (enable_darkmode.Checked && enable_sound.Checked && !download_no)
+            else if (enable_darkmode.Checked && enable_sound.Checked && download_no)
             {
                 //Store the State of the Application
                 Properties.Settings.Default.darkmode_checked = true;
@@ -135,7 +135,7 @@ namespace Tic_Tac_Toe_WF
                 snd.Play();
                 Close();
             }
-            else if (enable_music.Checked && enable_sound.Checked && !download_no)
+            else if (enable_music.Checked && enable_sound.Checked && download_no)
             {
                 //Store the State of the Application
                 Properties.Settings.Default.enable_music = true;
@@ -148,7 +148,7 @@ namespace Tic_Tac_Toe_WF
                 snd.Play();
                 Close();
             }
-            else if (enable_music.Checked && !download_no)
+            else if (enable_music.Checked && download_no)
             {
                 //Store the State of the Application
                 Properties.Settings.Default.enable_music = true;
@@ -158,7 +158,7 @@ namespace Tic_Tac_Toe_WF
                 snd.Play();
                 Close();
             }
-            else if (enable_sound.Checked && !download_no)
+            else if (enable_sound.Checked && download_no)
             {
                 //Store the State of the Application
                 Properties.Settings.Default.enable_sounds = true;
