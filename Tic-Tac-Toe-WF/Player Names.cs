@@ -33,6 +33,16 @@ namespace Tic_Tac_Toe_WF
             //player1Name = player1Name.ToUpper();
             //player2Name = player2Name.ToUpper();
 
+            //Enable the AI aka. The Computer
+            if (Player2.Text == "Computer")
+            {
+                loadGame.ai_enable = true;
+                Playernames.player2Name = "Computer";
+                Hide();
+                loadGame.StartPosition = FormStartPosition.CenterScreen;
+                loadGame.Show();
+            }
+
             //Check if the Boxes contain any letters, if they contain anything else than letters or nothing - Error
             //true if it doesn't contain letters
             //Bugfix for https://github.com/DanielKng/Tic-Tac-Toe/issues/6 and https://github.com/DanielKng/Tic-Tac-Toe/issues/5

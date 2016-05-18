@@ -15,9 +15,6 @@ namespace Tic_Tac_Toe_WF
         public Checkboxes_Disabled()
         {
             InitializeComponent();
-            this.TopMost = true;
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
             Blink();
         }
             private async void Blink()
@@ -25,8 +22,8 @@ namespace Tic_Tac_Toe_WF
             while (true)
             {
                 await Task.Delay(100);
-                label1.BackColor = label1.BackColor == Color.Red ? Color.White : Color.Red;
-                label1.ForeColor = label1.ForeColor == Color.White ? Color.Green : Color.White;
+                textBox1.BackColor = textBox1.BackColor == Color.Red ? Color.White : Color.Red;
+                textBox1.ForeColor = textBox1.ForeColor == Color.White ? Color.Green : Color.White;
             }
         }
     }

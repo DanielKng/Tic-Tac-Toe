@@ -61,6 +61,18 @@ namespace Tic_Tac_Toe_WF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This list gets updated every release!
+        ///
+        ///1. If you play against the AI and create a new Game, the AI is a normal player
+        ///2. Score a Draw against the KI and you get a Error-Message.
+        /// </summary>
+        public static string bugs {
+            get {
+                return ResourceManager.GetString("bugs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to v-0.1.85-beta
         ///	- Added a AI. To activate the AI, hover your mouse above the v-1.85-beta label,
         ///	  until you see the Text-cursor and type &quot;ai_enable&quot;. Now click &quot;Start&quot;.
@@ -81,9 +93,9 @@ namespace Tic_Tac_Toe_WF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap checkbox {
+        public static System.Drawing.Bitmap checkbox_disable {
             get {
-                object obj = ResourceManager.GetObject("checkbox", resourceCulture);
+                object obj = ResourceManager.GetObject("checkbox_disable", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

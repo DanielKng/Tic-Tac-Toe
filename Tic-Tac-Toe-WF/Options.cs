@@ -30,13 +30,14 @@ namespace Tic_Tac_Toe_WF
         //Standard variable for the Message Box
         bool download_no = true;
         Form1 loadMain = new Form1();
+
         public Options()
         {
             string[] dFiles = Directory.GetFiles(@"C:\Ultimate Tic-Tac-Toe\Audios");
             string fCount = dFiles.Length.ToString();
             InitializeComponent();
             //THis only happens if you clicked on the Option Button!
-            if(fCount != "4" && Properties.Settings.Default.options_clicked)
+            if (fCount != "4" && Properties.Settings.Default.options_clicked)
             {
                 CheckForFiles();
             }
@@ -54,9 +55,9 @@ namespace Tic_Tac_Toe_WF
             download_info.Text = "File 2/4 loading...\r\n\r\n" + remoteUri_standard;
             await webClient.DownloadFileTaskAsync(new Uri(remoteUri_standard), fileName_standard);
             // if here: 2nd file downloaded
-            download_info.Text = "File 3/4 loading...\r\n\r\n"+remoteUri_win;
+            download_info.Text = "File 3/4 loading...\r\n\r\n" + remoteUri_win;
             await webClient.DownloadFileTaskAsync(new Uri(remoteUri_win), fileName_win);
-            download_info.Text = "File 4/4 loading...\r\n\r\n"+remoteUri_lose;
+            download_info.Text = "File 4/4 loading...\r\n\r\n" + remoteUri_lose;
             await webClient.DownloadFileTaskAsync(new Uri(remoteUri_lose), fileName_lose);
             //Change our Label Color to green - Success
             download_info.ForeColor = Color.Green;
@@ -73,7 +74,7 @@ namespace Tic_Tac_Toe_WF
             if (fCount != "4")
             {
                 if (MessageBox.Show("Attention! In order to use the Audio features, a one time download is needed! Proceed?", "Files missing!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {                 
+                {
                     //We clicked yes, change the Variable
                     download_no = false;
                     //Just to be sure, delete all previous files!
@@ -111,15 +112,17 @@ namespace Tic_Tac_Toe_WF
         }
         private void apply_options_Click(object sender, EventArgs e)
         {
+            //ACTIVATE SOUND
             //Check if the User downloaded something. If not..Scare him!
             if (enable_darkmode.Checked && apply_options.Text == "Apply!")
             {
                 CheckboxesDisabel();
             }
-            else if(enable_darkmode.Checked && enable_music.Checked && download_no)
-            { 
+            else if (enable_darkmode.Checked && enable_music.Checked && download_no)
+            {
                 Properties.Settings.Default.darkmode_checked = false;
                 Properties.Settings.Default.enable_music = false;
+                MessageBox.Show("These two can't be enabled at the same time!");
             }
             //If you checked Dark Mode and the File exists
             else if (enable_darkmode.Checked && enable_sound.Checked && download_no)
@@ -131,8 +134,8 @@ namespace Tic_Tac_Toe_WF
                 SoundPlayer snd = new SoundPlayer(fileName_dark);
                 //We need to call the Sound only if we won or lost, so we save the Preference and call it in the Winscreen
                 Properties.Settings.Default.enable_sounds = true;
-                //Play the files
-                snd.Play();
+                //Play the file
+                PlayMusic(snd);
                 Close();
             }
             else if (enable_music.Checked && enable_sound.Checked && download_no)
@@ -142,10 +145,9 @@ namespace Tic_Tac_Toe_WF
                 Properties.Settings.Default.enable_sounds = true;
                 //Load Music
                 SoundPlayer snd = new SoundPlayer(fileName_standard);
-                //We need to call the Sound only if we won or lost, so we save the Preference and call it in the Winscreen
+                PlayMusic(snd);
+                //We need to call the Sounds only if we won or lost, so we save the Preference and call it in the Winscreen
                 Properties.Settings.Default.enable_sounds = true;
-                //Play the files
-                snd.Play();
                 Close();
             }
             else if (enable_music.Checked && download_no)
@@ -155,7 +157,7 @@ namespace Tic_Tac_Toe_WF
                 //Load Music
                 SoundPlayer snd = new SoundPlayer(fileName_standard);
                 //Play the files
-                snd.Play();
+                PlayMusic(snd);
                 Close();
             }
             else if (enable_sound.Checked && download_no)
@@ -164,10 +166,16 @@ namespace Tic_Tac_Toe_WF
                 Properties.Settings.Default.enable_sounds = true;
                 Close();
             }
+            else if(enable_darkmode.Checked && download_no)
+            {
+                SoundPlayer snd= new SoundPlayer(fileName_dark);
+                PlayMusic(snd);
+                Close();
+            }
             //If the User pressed the "Delete Files" Button
             else if (delete_files.Checked)
             {
-                if((MessageBox.Show("This will DELETE all files downloaded by this Application!", "ATTENTION!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK))
+                if ((MessageBox.Show("This will DELETE all files downloaded by this Application!", "ATTENTION!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK))
                 {
                     int fCount = Directory.GetFiles(path, "*", SearchOption.AllDirectories).Length;
                     Array.ForEach(Directory.GetFiles(@"C:\Ultimate Tic-Tac-Toe\Audios"), File.Delete);
@@ -177,6 +185,45 @@ namespace Tic_Tac_Toe_WF
                 {
                     MessageBox.Show("Whoa! That just went barely wrong! Thank God that you saved me!");
                 }
+            }
+            //DISABLE SOUND
+            else if (!enable_music.Checked && download_no)
+            {
+                //Store the State of the Application
+                Properties.Settings.Default.enable_music = false;
+                //Load Music
+                SoundPlayer snd = new SoundPlayer(fileName_standard);
+                //Play the files
+                StopMusic(snd);
+                Close();
+            }
+            else if (!enable_music.Checked && !enable_sound.Checked && download_no)
+            {
+                //Store the State of the Application
+                Properties.Settings.Default.enable_music = false;
+                Properties.Settings.Default.enable_sounds = false;
+                //Load Music to stop it
+                SoundPlayer snd = new SoundPlayer(fileName_standard);
+                //Stop the Music
+                StopMusic(snd);
+                Close();
+            }
+            else if (!enable_darkmode.Checked && !enable_sound.Checked && download_no)
+            {
+                //Store the State of the Application
+                Properties.Settings.Default.darkmode_checked = false;
+                Properties.Settings.Default.enable_sounds = false;
+                //Load Music to Stop it
+                SoundPlayer snd = new SoundPlayer(fileName_dark);
+                //Play the files
+                StopMusic(snd);
+                Close();
+            }
+            else if (enable_sound.Checked && download_no)
+            {
+                //Store the State of the Application
+                Properties.Settings.Default.enable_sounds = false;
+                Close();
             }
         }
         public void Positions()
@@ -195,8 +242,22 @@ namespace Tic_Tac_Toe_WF
             back_button.Location = new Point(12, 200);
             apply_options.Location = new Point(115, 200);
         }
+        private void StopMusic(SoundPlayer snd)
+        {
+            if(!Properties.Settings.Default.enable_music || !Properties.Settings.Default.enable_sounds || !Properties.Settings.Default.darkmode_checked)
+            { 
+                snd.Stop();
+            }
+        }
+        private async Task PlayMusic(SoundPlayer snd)
+        {
+            snd.Play();
+        }
         private void back_button_Click_1(object sender, EventArgs e)
         {
+            Properties.Settings.Default.enable_music = false;
+            Properties.Settings.Default.enable_sounds = false;
+            Properties.Settings.Default.darkmode_checked = false;
             Close();
         }
     }

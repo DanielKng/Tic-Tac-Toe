@@ -157,7 +157,7 @@
             this.Exit_Game.Name = "Exit_Game";
             this.Exit_Game.Size = new System.Drawing.Size(75, 23);
             this.Exit_Game.TabIndex = 11;
-            this.Exit_Game.Text = "Exit";
+            this.Exit_Game.Text = "Back";
             this.Exit_Game.UseVisualStyleBackColor = true;
             this.Exit_Game.Click += new System.EventHandler(this.Exit_Game_Click);
             // 
@@ -280,6 +280,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.A1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Game";
             this.Text = "Ultimate Tic-Tac-Toe";
             this.Load += new System.EventHandler(this.Game_Load);

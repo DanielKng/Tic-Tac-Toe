@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bugs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bugs.Designer.cs">
+      <DependentUpon>Bugs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Changelog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     <Compile Include="Winscreen.Designer.cs">
       <DependentUpon>Winscreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Bugs.resx">
+      <DependentUpon>Bugs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Changelog.resx">
       <DependentUpon>Changelog.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,14 +187,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Main.png" />
-    <None Include="Resources\Game.png" />
-    <None Include="Resources\Header.png" />
-    <None Include="Resources\Game Over.gif" />
-    <None Include="Resources\changelog.txt" />
-    <None Include="Resources\disabled.mpg" />
-    <None Include="Resources\checkbox.jpg" />
-    <None Include="Resources\winner.gif" />
+    <EmbeddedResource Include="Resources\Main.png" />
+    <EmbeddedResource Include="Resources\Game.png" />
+    <EmbeddedResource Include="Resources\Header.png" />
+    <EmbeddedResource Include="Resources\Game Over.gif" />
+    <EmbeddedResource Include="Resources\changelog.txt" />
+    <EmbeddedResource Include="Resources\winner.gif" />
+    <EmbeddedResource Include="Resources\bugs.txt" />
+    <Content Include="Resources\checkbox_disable.gif" />
     <Content Include="X-O.ico" />
   </ItemGroup>
   <ItemGroup>

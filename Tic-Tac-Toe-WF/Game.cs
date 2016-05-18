@@ -18,24 +18,30 @@ namespace Tic_Tac_Toe_WF
         public int playerSteps = 0;
         public int player1Stats = 0;
         public int player2Stats = 0;
-        //Loading sounds
+        //Loading needed Stuff
+        Form1 loadMain = new Form1();
         Options loadOptions = new Options();
         //Now it gets interesting! Adding the AI!
         public bool ai_enable = false;
         public Game()
         {
             InitializeComponent();
-            //Shows the name of the starting player
-            PlayerTurnValue = "It's your turn, " + Playernames.player1Name;
         }
         private void Game_Load(object sender, EventArgs e)
         {
             //Set the Playername
             player1_label.Text = "Player " + Playernames.player1Name;
             player2_label.Text = "Player " + Playernames.player2Name;
-            if(Playernames.player2Name == "AI")
+            if (Playernames.player2Name == "Computer")
             {
                 player2_label.Text = "1337 Cheater";
+                //Bugfix for https://github.com/DanielKng/Tic-Tac-Toe/issues/9
+                PlayerTurnValue = "It's your turn, " + Playernames.player1Name;
+            }
+            else if (player)
+            {
+                //Bugfix for https://github.com/DanielKng/Tic-Tac-Toe/issues/9
+                PlayerTurnValue = "It's your turn, " + Playernames.player1Name;
             }
             //Shows how often Player XY won
             player1_stats_counter.Text = "won " + player1Stats.ToString() + " time(s)";
@@ -49,7 +55,7 @@ namespace Tic_Tac_Toe_WF
         //AI Logic
         private void ai_move()
         {
-            //priority 1:  get tick tac toe
+            //priority 1:  get tic tac toe
             //priority 2:  block x tic tac toe
             //priority 3:  go for corner space
             //priority 4:  pick open space
@@ -76,7 +82,6 @@ namespace Tic_Tac_Toe_WF
 
         private Button free_field()
         {
-            Console.WriteLine("Looking for open space");
             Button b = null;
             foreach (Control c in Controls)
             {
@@ -93,7 +98,6 @@ namespace Tic_Tac_Toe_WF
 
         private Button open_corner()
         {
-            Console.WriteLine("Looking for corner");
             if (A1.Text == "O")
             {
                 if (A3.Text == "")
@@ -207,7 +211,10 @@ namespace Tic_Tac_Toe_WF
             if ((A3.Text == mark) && (C1.Text == mark) && (B2.Text == ""))
                 return B2;
             //This should never be reached, but its neccesary!
-            return null;
+            else
+            {
+                return null;
+            }
         }//AI Logic END
         private void button_click(object sender, EventArgs e)
         {
@@ -248,7 +255,7 @@ namespace Tic_Tac_Toe_WF
                     PlayerTurnValue = "It's your turn, " + Playernames.player2Name;
                 }
                 //This is the AI stat
-                else if(Playernames.player1Name == "X" && Playernames.player2Name == "AI")
+                else if (Playernames.player1Name == "X" && Playernames.player2Name == "AI")
                 {
                     buttons.Text = "A";
                     PlayerTurnValue = "It's your turn, " + Playernames.player1Name;
@@ -268,8 +275,7 @@ namespace Tic_Tac_Toe_WF
             playerSteps++;
             //Check for the Winner after every Step!
             CheckWinner();
-            //Call the AI 
-           if ((!player) && ai_enable)
+            if ((!player) && ai_enable)
             {
                 ai_move();
             }
@@ -467,7 +473,7 @@ namespace Tic_Tac_Toe_WF
                         b.Text = "";
                         //Because the Text on the other Buttons gets reset too, we have to rewrite them!
                         New_Game.Text = "New Game";
-                        Exit_Game.Text = "Exit";
+                        Exit_Game.Text = "Back";
                     }
                     catch { }
                 }
@@ -497,7 +503,7 @@ namespace Tic_Tac_Toe_WF
                         b.Text = "";
                         //Because the Text on the other Buttons gets reset too, we have to rewrite them!
                         New_Game.Text = "New Game";
-                        Exit_Game.Text = "Exit";
+                        Exit_Game.Text = "Back";
                     }
                     catch { }
                 }
@@ -505,7 +511,8 @@ namespace Tic_Tac_Toe_WF
         }
         private void Exit_Game_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
+            loadMain.Show();
         }
     }
 }

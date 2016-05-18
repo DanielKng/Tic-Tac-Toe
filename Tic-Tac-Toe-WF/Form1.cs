@@ -17,6 +17,7 @@ namespace Tic_Tac_Toe_WF
             InitializeComponent();
         }
 
+
         private void Start_Click(object sender, EventArgs e)
         {
             //Load Classes
@@ -34,19 +35,11 @@ namespace Tic_Tac_Toe_WF
             }
             else
             {
-                if (ai_enabled.Text == "ai_enable")
-                {
-                    loadGame.ai_enable = true;
-                    Playernames.player1Name = "X";
-                    Playernames.player2Name = "AI";
-                    loadGame.Show();
-                    Hide();
-                }
                 //Load default names
                 Playernames.player1Name = "X";
                 Playernames.player2Name = "O";
-                loadGame.Show();
                 Hide();
+                loadGame.Show();                
             }
         }
         //If the user clicked on the Credits-Button, hide the Menu and open the credit form
@@ -78,16 +71,19 @@ namespace Tic_Tac_Toe_WF
 
         private void options_Click(object sender, EventArgs e)
         {
+            //TODO: Put into method
+            //First Create the Directory. It will NOT be created if its there already!
+            Directory.CreateDirectory(@"C:\Ultimate Tic-Tac-Toe\Audios");
+            //Check the Directory for files
             string[] dFiles = Directory.GetFiles(@"C:\Ultimate Tic-Tac-Toe\Audios");
+            //Convert the Content into a String
             string fCount = dFiles.Length.ToString();
-
             //If we have have 4 files, we dont need to Open the Download Window
             if (fCount != "4")
             {
                 //True means you really want to get into the Options, otherwise the "You need to Download" PopUp shows every time
                 Properties.Settings.Default.options_clicked = true;
                 Options loadOptions = new Options();
-                Directory.CreateDirectory(@"C:\Ultimate Tic-Tac-Toe\Audios");
                 loadOptions.ShowDialog();
             }
             else
@@ -95,10 +91,18 @@ namespace Tic_Tac_Toe_WF
                 //True means you really want to get into the Options, otherwise the "You need to Download" PopUp shows every time
                 Properties.Settings.Default.options_clicked = false;
                 Options loadOptions = new Options();
-                Directory.CreateDirectory(@"C:\Ultimate Tic-Tac-Toe\Audios");
                 loadOptions.Positions();
                 loadOptions.ShowDialog();
             }
+        }
+
+        private void bugs_button_Click(object sender, EventArgs e)
+        {
+            Bugs loadBugs = new Bugs();
+            //We now load the Changelog trough a file! Thanks to Patrick for the Idea!
+            loadBugs.bugs_text.Text = Properties.Resources.bugs;
+            //Call the UI
+            loadBugs.Show();
         }
     }
 }

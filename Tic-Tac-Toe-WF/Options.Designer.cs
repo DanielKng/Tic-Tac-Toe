@@ -43,6 +43,8 @@
             // 
             this.enable_music.AutoSize = true;
             this.enable_music.BackColor = System.Drawing.Color.White;
+            this.enable_music.Checked = global::Tic_Tac_Toe_WF.Properties.Settings.Default.enable_music;
+            this.enable_music.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Tic_Tac_Toe_WF.Properties.Settings.Default, "enable_music", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.enable_music.ForeColor = System.Drawing.Color.Black;
             this.enable_music.Location = new System.Drawing.Point(112, 80);
             this.enable_music.Name = "enable_music";
@@ -54,6 +56,8 @@
             // enable_sound
             // 
             this.enable_sound.AutoSize = true;
+            this.enable_sound.Checked = global::Tic_Tac_Toe_WF.Properties.Settings.Default.enable_sounds;
+            this.enable_sound.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Tic_Tac_Toe_WF.Properties.Settings.Default, "enable_sounds", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.enable_sound.Location = new System.Drawing.Point(112, 113);
             this.enable_sound.Name = "enable_sound";
             this.enable_sound.Size = new System.Drawing.Size(98, 17);

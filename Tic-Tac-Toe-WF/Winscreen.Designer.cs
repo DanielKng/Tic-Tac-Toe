@@ -44,7 +44,8 @@
             this.winscreenTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.winscreenTextbox.Cursor = System.Windows.Forms.Cursors.Default;
             this.winscreenTextbox.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.winscreenTextbox.Location = new System.Drawing.Point(-6, 0);
+            this.winscreenTextbox.ForeColor = System.Drawing.Color.White;
+            this.winscreenTextbox.Location = new System.Drawing.Point(-3, 325);
             this.winscreenTextbox.Multiline = true;
             this.winscreenTextbox.Name = "winscreenTextbox";
             this.winscreenTextbox.Size = new System.Drawing.Size(474, 34);
@@ -56,7 +57,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = global::Tic_Tac_Toe_WF.Properties.Resources.winner;
-            this.pictureBox1.Location = new System.Drawing.Point(-16, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(-15, -14);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(501, 481);
             this.pictureBox1.TabIndex = 0;
@@ -67,7 +68,7 @@
             // 
             this.winscreen_again.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.winscreen_again.FlatAppearance.BorderSize = 0;
-            this.winscreen_again.Location = new System.Drawing.Point(12, 444);
+            this.winscreen_again.Location = new System.Drawing.Point(12, 432);
             this.winscreen_again.Name = "winscreen_again";
             this.winscreen_again.Size = new System.Drawing.Size(75, 23);
             this.winscreen_again.TabIndex = 1;
@@ -78,7 +79,7 @@
             // winscreen_exit
             // 
             this.winscreen_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.winscreen_exit.Location = new System.Drawing.Point(380, 444);
+            this.winscreen_exit.Location = new System.Drawing.Point(380, 432);
             this.winscreen_exit.Name = "winscreen_exit";
             this.winscreen_exit.Size = new System.Drawing.Size(75, 23);
             this.winscreen_exit.TabIndex = 2;
@@ -114,7 +115,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 479);
+            this.ClientSize = new System.Drawing.Size(467, 466);
             this.Controls.Add(this.reset_stats_winscreen);
             this.Controls.Add(this.changename_winscreen);
             this.Controls.Add(this.winscreen_exit);
@@ -122,6 +123,8 @@
             this.Controls.Add(this.winscreenTextbox);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Winscreen";
             this.Text = "Ultimate Tic-Tac-Toe";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

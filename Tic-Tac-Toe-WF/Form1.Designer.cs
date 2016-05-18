@@ -36,8 +36,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.changelog = new System.Windows.Forms.Button();
             this.enable_playernames = new System.Windows.Forms.CheckBox();
-            this.ai_enabled = new System.Windows.Forms.TextBox();
             this.options = new System.Windows.Forms.Button();
+            this.bugs_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@
             // 
             // Credits
             // 
-            this.Credits.Location = new System.Drawing.Point(12, 234);
+            this.Credits.Location = new System.Drawing.Point(12, 247);
             this.Credits.Name = "Credits";
             this.Credits.Size = new System.Drawing.Size(75, 23);
             this.Credits.TabIndex = 2;
@@ -65,12 +65,12 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(414, 286);
+            this.textBox1.Location = new System.Drawing.Point(397, 286);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(83, 13);
+            this.textBox1.Size = new System.Drawing.Size(100, 13);
             this.textBox1.TabIndex = 0;
             this.textBox1.TabStop = false;
-            this.textBox1.Text = "Build: 0.1.85-beta";
+            this.textBox1.Text = "Build: 1.33.7-release";
             // 
             // Exit
             // 
@@ -113,14 +113,6 @@
             this.enable_playernames.Text = "Enable Playernames";
             this.enable_playernames.UseVisualStyleBackColor = true;
             // 
-            // ai_enabled
-            // 
-            this.ai_enabled.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ai_enabled.Location = new System.Drawing.Point(448, 267);
-            this.ai_enabled.Name = "ai_enabled";
-            this.ai_enabled.Size = new System.Drawing.Size(49, 13);
-            this.ai_enabled.TabIndex = 7;
-            // 
             // options
             // 
             this.options.Location = new System.Drawing.Point(220, 222);
@@ -131,14 +123,24 @@
             this.options.UseVisualStyleBackColor = true;
             this.options.Click += new System.EventHandler(this.options_Click);
             // 
+            // bugs_button
+            // 
+            this.bugs_button.Location = new System.Drawing.Point(12, 218);
+            this.bugs_button.Name = "bugs_button";
+            this.bugs_button.Size = new System.Drawing.Size(75, 23);
+            this.bugs_button.TabIndex = 9;
+            this.bugs_button.Text = "Bugs";
+            this.bugs_button.UseVisualStyleBackColor = true;
+            this.bugs_button.Click += new System.EventHandler(this.bugs_button_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(509, 311);
+            this.Controls.Add(this.bugs_button);
             this.Controls.Add(this.options);
-            this.Controls.Add(this.ai_enabled);
             this.Controls.Add(this.enable_playernames);
             this.Controls.Add(this.changelog);
             this.Controls.Add(this.Exit);
@@ -166,7 +168,7 @@
         public System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.CheckBox enable_playernames;
-        public System.Windows.Forms.TextBox ai_enabled;
+        private System.Windows.Forms.Button bugs_button;
     }
 }
 

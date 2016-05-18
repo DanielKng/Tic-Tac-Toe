@@ -82,5 +82,17 @@ namespace Tic_Tac_Toe_WF.Properties {
                 this["options_clicked"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool popup_showed {
+            get {
+                return ((bool)(this["popup_showed"]));
+            }
+            set {
+                this["popup_showed"] = value;
+            }
+        }
     }
 }
