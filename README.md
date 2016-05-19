@@ -27,6 +27,11 @@ The main task was to create a simple Tic-Tac-Toe game, which can handle all typi
 
 Some features, such as savegames, may seem useless - and they are. But this Project is more a learning task for me and others. So please keep that in mind!
 
+## FAQ
+
+* Can i use your Code in my Project?
+  - Yes! But please link this Project in your Program, not in the Sourcecode. We worked hard on this and much effort went into th
+
 ## Screenshots
 Please keep in mind that the Images will be reworked!
 
