@@ -60,12 +60,13 @@ namespace Tic_Tac_Toe_WF
             }
             else if (reset_stats_winscreen.Checked)
             {
+                
                 //Reset the Stats!
-                loadGame.player1Stats = 0;
-                loadGame.player2Stats = 0;
+                Properties.Settings.Default.player_1_stats = 0;
+                Properties.Settings.Default.player_2_stats = 0;
                 //Shows how often Player XY won
-                loadGame.player1_stats_counter.Text = "won " + loadGame.player1Stats.ToString() + " time(s)";
-                loadGame.player2_stats_counter.Text = "won " + loadGame.player2Stats.ToString() + " time(s)";
+                loadGame.player1_stats_counter.Text = "won " + Properties.Settings.Default.player_1_stats.ToString() + " time(s)";
+                loadGame.player2_stats_counter.Text = "won " + Properties.Settings.Default.player_2_stats.ToString() + " time(s)";
                 //Reset which Player is next
                 loadGame.player = true;
                 //Reset how many clicks are done
@@ -78,8 +79,11 @@ namespace Tic_Tac_Toe_WF
                 loadGame.Show();
             }
             //Else, you did not checked the Box, normal "New-Game"
-            else
+            else 
             {
+
+                Properties.Settings.Default.player_2_stats = loadGame.player2Stats + Properties.Settings.Default.player_2_stats;
+                              
                 //Reset which Player is next
                 loadGame.player = true;
                 //Reset how many clicks are done
@@ -89,6 +93,8 @@ namespace Tic_Tac_Toe_WF
                 //Close the old Field
                 this.oldPlayfield.Close();
                 //Close the current Window
+
+                
                 Close();
             }
         }

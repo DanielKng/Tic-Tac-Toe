@@ -1,7 +1,4 @@
 ﻿using System;
-//Imported Library!
-using NAudio;
-using NAudio.Wave;
 using System.Windows.Forms;
 using System.IO;
 using System.Media;
