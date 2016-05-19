@@ -339,7 +339,6 @@ namespace Tic_Tac_Toe_WF
                     
                     //We need to increase the Stats first
                     Properties.Settings.Default.player_2_stats = Properties.Settings.Default.player_2_stats + 1;
-                    MessageBox.Show(player2Stats.ToString());
                     //Shows how often Player XY won
                     player2_stats_counter.Text = "won " + Properties.Settings.Default.player_2_stats + " time(s)";
 
