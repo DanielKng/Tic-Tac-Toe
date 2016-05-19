@@ -33,6 +33,7 @@ namespace Tic_Tac_Toe_WF
 
         public Options()
         {
+            Directory.CreateDirectory(@"C:\Ultimate Tic-Tac-Toe\Audios");
             string[] dFiles = Directory.GetFiles(@"C:\Ultimate Tic-Tac-Toe\Audios");
             string fCount = dFiles.Length.ToString();
             InitializeComponent();
