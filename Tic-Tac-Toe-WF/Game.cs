@@ -499,9 +499,19 @@ namespace Tic_Tac_Toe_WF
                 {
                     try
                     {
-                        //Reset the Stats!
-                        Properties.Settings.Default.player_1_stats = 0;
-                        Properties.Settings.Default.player_2_stats = 0;
+                        //Reset all the Backgroundcolors, otherwise they wont disappear
+                        A1.BackColor = DefaultBackColor;
+                        A2.BackColor = DefaultBackColor;
+                        A3.BackColor = DefaultBackColor;
+
+                        B1.BackColor = DefaultBackColor;
+                        B2.BackColor = DefaultBackColor;
+                        B3.BackColor = DefaultBackColor;
+
+                        C1.BackColor = DefaultBackColor;
+                        C2.BackColor = DefaultBackColor;
+                        C3.BackColor = DefaultBackColor;
+                        
                         //Shows how often Player XY won
                         player1_stats_counter.Text = "won " + Properties.Settings.Default.player_1_stats + " time(s)";
                         player2_stats_counter.Text = "won " + Properties.Settings.Default.player_2_stats + " time(s)";
