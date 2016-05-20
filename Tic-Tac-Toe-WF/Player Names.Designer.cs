@@ -35,7 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Start = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ai_activate = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -93,24 +93,23 @@
             this.Start.UseVisualStyleBackColor = true;
             this.Start.Click += new System.EventHandler(this.Start_Click);
             // 
-            // textBox1
+            // ai_activate
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semilight", 10F);
-            this.textBox1.Location = new System.Drawing.Point(17, 177);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(255, 43);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = "Type \"Computer\" in Player 2 if you want to play against the AI!";
+            this.ai_activate.AutoSize = true;
+            this.ai_activate.Location = new System.Drawing.Point(86, 178);
+            this.ai_activate.Name = "ai_activate";
+            this.ai_activate.Size = new System.Drawing.Size(78, 17);
+            this.ai_activate.TabIndex = 6;
+            this.ai_activate.Text = "Activate AI";
+            this.ai_activate.UseVisualStyleBackColor = true;
+            this.ai_activate.CheckedChanged += new System.EventHandler(this.ai_activate_CheckedChanged);
             // 
             // Playernames
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ai_activate);
             this.Controls.Add(this.Start);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -134,6 +133,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button Start;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox ai_activate;
     }
 }

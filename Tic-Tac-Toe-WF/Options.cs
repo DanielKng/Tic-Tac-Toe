@@ -266,7 +266,7 @@ namespace Tic_Tac_Toe_WF
             Close();
         }
 
-        private void choose_color_player1_SelectedIndexChanged()
+        private void choose_color_player1_SelectedIndexChanged()                //all colors for player 1
         {
             int index = choose_color_player1.SelectedIndex;
 
@@ -301,7 +301,7 @@ namespace Tic_Tac_Toe_WF
             }
         }
 
-        private void choose_color_player2_SelectedIndexChanged()
+        private void choose_color_player2_SelectedIndexChanged()                        //all colors for player 2
         {
             int index = choose_color_player2.SelectedIndex;
 
