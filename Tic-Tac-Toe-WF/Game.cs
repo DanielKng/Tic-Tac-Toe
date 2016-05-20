@@ -228,6 +228,7 @@ namespace Tic_Tac_Toe_WF
                     //First, we need to delete everything except the first letter
                     string firstLetterP1 = Playernames.player1Name.Substring(0, 1);
                     //Set the first letter to the Button
+                    buttonsFirst.BackColor = Properties.Settings.Default.color_playerX;
                     buttonsFirst.Text = firstLetterP1;
                     //Which turn is it?
                     PlayerTurnValue = "It's your turn, " + Playernames.player2Name;
@@ -238,6 +239,7 @@ namespace Tic_Tac_Toe_WF
                     //First, we need to delete everything except the first letter
                     string firstLetterP2 = Playernames.player2Name.Substring(0, 1);
                     //Set the first letter to the Button
+                    buttonsFirst.BackColor = Properties.Settings.Default.color_playerO;
                     buttonsFirst.Text = firstLetterP2;
                     //Which turn?
                     PlayerTurnValue = "It's your turn, " + Playernames.player1Name;
@@ -251,19 +253,21 @@ namespace Tic_Tac_Toe_WF
                 //Checks which bool is set, and sets the Button Text
                 if (player)
                 {
-                    //True = Player X!
+                    buttons.BackColor = Properties.Settings.Default.color_playerX;                    
                     buttons.Text = "X";
                     PlayerTurnValue = "It's your turn, " + Playernames.player2Name;
                 }
                 //This is the AI stat
                 else if (Playernames.player1Name == "X" && Playernames.player2Name == "AI")
                 {
+                    buttons.BackColor = Properties.Settings.Default.color_playerO;
                     buttons.Text = "A";
                     PlayerTurnValue = "It's your turn, " + Playernames.player1Name;
                 }
                 else
                 {
                     //False! Player O!
+                    buttons.BackColor = Properties.Settings.Default.color_playerO; 
                     buttons.Text = "O";
                     PlayerTurnValue = "It's your turn, " + Playernames.player1Name;
                 }

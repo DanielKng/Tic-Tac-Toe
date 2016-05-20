@@ -118,5 +118,27 @@ namespace Tic_Tac_Toe_WF.Properties {
                 this["player_2_stats"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Drawing.Color color_playerX {
+            get {
+                return ((global::System.Drawing.Color)(this["color_playerX"]));
+            }
+            set {
+                this["color_playerX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Drawing.Color color_playerO {
+            get {
+                return ((global::System.Drawing.Color)(this["color_playerO"]));
+            }
+            set {
+                this["color_playerO"] = value;
+            }
+        }
     }
 }

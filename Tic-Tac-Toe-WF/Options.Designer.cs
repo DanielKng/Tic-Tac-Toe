@@ -37,6 +37,8 @@
             this.back_button = new System.Windows.Forms.Button();
             this.nope = new System.Windows.Forms.Label();
             this.download_info = new System.Windows.Forms.TextBox();
+            this.choose_color_player1 = new System.Windows.Forms.ComboBox();
+            this.choose_color_player2 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // enable_music
@@ -146,6 +148,40 @@
             this.download_info.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.download_info.Visible = false;
             // 
+            // choose_color_player1
+            // 
+            this.choose_color_player1.FormattingEnabled = true;
+            this.choose_color_player1.Items.AddRange(new object[] {
+            "Red",
+            "Blue",
+            "Green",
+            "Yellow",
+            "Pink",
+            "Brown"});
+            this.choose_color_player1.Location = new System.Drawing.Point(53, 186);
+            this.choose_color_player1.Name = "choose_color_player1";
+            this.choose_color_player1.Size = new System.Drawing.Size(121, 21);
+            this.choose_color_player1.TabIndex = 9;
+            this.choose_color_player1.Text = "Color Player One";
+            this.choose_color_player1.Visible = false;
+            // 
+            // choose_color_player2
+            // 
+            this.choose_color_player2.FormattingEnabled = true;
+            this.choose_color_player2.Items.AddRange(new object[] {
+            "Red",
+            "Blue",
+            "Green",
+            "Yellow",
+            "Pink",
+            "Brown"});
+            this.choose_color_player2.Location = new System.Drawing.Point(53, 213);
+            this.choose_color_player2.Name = "choose_color_player2";
+            this.choose_color_player2.Size = new System.Drawing.Size(121, 21);
+            this.choose_color_player2.TabIndex = 10;
+            this.choose_color_player2.Text = "Color Player Two";
+            this.choose_color_player2.Visible = false;
+            // 
             // Options
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,6 +189,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(312, 289);
             this.ControlBox = false;
+            this.Controls.Add(this.choose_color_player2);
+            this.Controls.Add(this.choose_color_player1);
             this.Controls.Add(this.download_info);
             this.Controls.Add(this.nope);
             this.Controls.Add(this.delete_files);
@@ -182,5 +220,7 @@
         private System.Windows.Forms.Button back_button;
         private System.Windows.Forms.Label nope;
         private System.Windows.Forms.TextBox download_info;
+        public System.Windows.Forms.ComboBox choose_color_player1;
+        public System.Windows.Forms.ComboBox choose_color_player2;
     }
 }
