@@ -1,6 +1,6 @@
 # Tic-Tac-Toe - A Windows Forms Project
 
-[![Changelog and Download](https://img.shields.io/badge/Download-v0.0.96--beta-blue.svg)](https://github.com/DanielKng/Tic-Tac-Toe/releases)
+[![Changelog and Download](https://img.shields.io/badge/Download-v0.1.85--beta-blue.svg)](https://github.com/DanielKng/Tic-Tac-Toe/releases)
 
 ---
 
@@ -12,16 +12,25 @@ The main task was to create a simple Tic-Tac-Toe game, which can handle all typi
 - Playernames
 - A winning and losing Animation
 - Change your playernames on the fly
+- Stats
+- AI
+- Changelog
 
 ## Upcoming Features
-- [ ] Stats
+- [X] Stats
 - [ ] Savegame
 - [ ] Colors
-- [ ] AI
+- [X] AI
 - [ ] Reworked Images
 - [X] Changelog
+- [ ] Eastereggs
 
 Some features, such as savegames, may seem useless - and they are. But this Project is more a learning task for me and others. So please keep that in mind!
+
+## FAQ
+
+* Can i use your Code in my Project?
+  - Yes! But please link this Project in your Program, not in the Sourcecode. We worked hard on this and much effort went into th
 
 ## Screenshots
 Please keep in mind that the Images will be reworked!

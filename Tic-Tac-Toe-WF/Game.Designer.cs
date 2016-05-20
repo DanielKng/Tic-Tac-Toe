@@ -157,7 +157,7 @@
             this.Exit_Game.Name = "Exit_Game";
             this.Exit_Game.Size = new System.Drawing.Size(75, 23);
             this.Exit_Game.TabIndex = 11;
-            this.Exit_Game.Text = "Exit";
+            this.Exit_Game.Text = "Back";
             this.Exit_Game.UseVisualStyleBackColor = true;
             this.Exit_Game.Click += new System.EventHandler(this.Exit_Game_Click);
             // 
@@ -177,9 +177,10 @@
             this.player_turn.Font = new System.Drawing.Font("Segoe UI Light", 15F);
             this.player_turn.Location = new System.Drawing.Point(191, 109);
             this.player_turn.Name = "player_turn";
-            this.player_turn.Size = new System.Drawing.Size(137, 28);
+            this.player_turn.Size = new System.Drawing.Size(181, 28);
             this.player_turn.TabIndex = 13;
-            this.player_turn.Text = "It\'s your turn, X";
+            this.player_turn.Text = "Let the Game begin!";
+            this.player_turn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -279,6 +280,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.A1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Game";
             this.Text = "Ultimate Tic-Tac-Toe";
             this.Load += new System.EventHandler(this.Game_Load);

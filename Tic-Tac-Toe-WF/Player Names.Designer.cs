@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Start = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +57,7 @@
             // 
             // Player2
             // 
-            this.Player2.Location = new System.Drawing.Point(85, 150);
+            this.Player2.Location = new System.Drawing.Point(86, 137);
             this.Player2.Name = "Player2";
             this.Player2.Size = new System.Drawing.Size(186, 20);
             this.Player2.TabIndex = 2;
@@ -75,7 +76,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Light", 9.75F);
-            this.label3.Location = new System.Drawing.Point(14, 150);
+            this.label3.Location = new System.Drawing.Point(14, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 17);
             this.label3.TabIndex = 4;
@@ -84,7 +85,7 @@
             // Start
             // 
             this.Start.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Start.Location = new System.Drawing.Point(98, 226);
+            this.Start.Location = new System.Drawing.Point(96, 226);
             this.Start.Name = "Start";
             this.Start.Size = new System.Drawing.Size(75, 23);
             this.Start.TabIndex = 5;
@@ -92,11 +93,24 @@
             this.Start.UseVisualStyleBackColor = true;
             this.Start.Click += new System.EventHandler(this.Start_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semilight", 10F);
+            this.textBox1.Location = new System.Drawing.Point(17, 177);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(255, 43);
+            this.textBox1.TabIndex = 6;
+            this.textBox1.Text = "Type \"Computer\" in Player 2 if you want to play against the AI!";
+            // 
             // Playernames
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Start);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -104,6 +118,7 @@
             this.Controls.Add(this.Player1);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Playernames";
             this.Text = "Ultimate Tic-Tac-Toe";
             this.ResumeLayout(false);
@@ -119,5 +134,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button Start;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

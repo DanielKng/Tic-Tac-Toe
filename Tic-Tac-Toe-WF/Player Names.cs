@@ -15,6 +15,7 @@ namespace Tic_Tac_Toe_WF
     {
         public static string player1Name = "";
         public static string player2Name = "";
+        Game loadGame = new Game();
         public Playernames()
         {
             InitializeComponent();
@@ -31,6 +32,16 @@ namespace Tic_Tac_Toe_WF
 
             //player1Name = player1Name.ToUpper();
             //player2Name = player2Name.ToUpper();
+
+            //Enable the AI aka. The Computer
+            if (Player2.Text == "Computer")
+            {
+                loadGame.ai_enable = true;
+                Playernames.player2Name = "Computer";
+                Hide();
+                loadGame.StartPosition = FormStartPosition.CenterScreen;
+                loadGame.Show();
+            }
 
             //Check if the Boxes contain any letters, if they contain anything else than letters or nothing - Error
             //true if it doesn't contain letters
@@ -56,7 +67,6 @@ namespace Tic_Tac_Toe_WF
             else
             {
                 //Load the Game
-                Game loadGame = new Game();
                 //This is important. With this piece of code the Window gets centered and is at the same place as all other Windows!               
                 loadGame.StartPosition = FormStartPosition.CenterScreen;
                 loadGame.Show();

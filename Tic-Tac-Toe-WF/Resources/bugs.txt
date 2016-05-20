@@ -1,0 +1,5 @@
+This list gets updated every release!
+
+Known Bugs:
+1. If you play against the AI and create a new Game, the AI is a normal player
+2. Score a Draw against the KI and you get a Error-Message

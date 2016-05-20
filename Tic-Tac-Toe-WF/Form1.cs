@@ -1,52 +1,50 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Media;
+using System.Drawing;
+using System.Security.Permissions;
 
 namespace Tic_Tac_Toe_WF
 {
     public partial class Form1 : Form
     {
-
         public Form1()
         {
             InitializeComponent();
         }
 
+
         private void Start_Click(object sender, EventArgs e)
         {
+            //Load Classes
+            Game loadGame = new Game();
+            Playernames loadPlayernames = new Playernames();
+
+            //Center Windows
+            loadGame.StartPosition = FormStartPosition.CenterScreen;
+            loadPlayernames.StartPosition = FormStartPosition.CenterScreen;
+
             if (enable_playernames.Checked == true)
             {
-                //Load custom names
-                Playernames loadPlayernames = new Playernames();
-                //This is important. With this piece of code the Window gets centered               
-                loadPlayernames.StartPosition = FormStartPosition.CenterScreen;
                 loadPlayernames.Show();
-                this.Hide();
+                Hide();
             }
             else
             {
                 //Load default names
                 Playernames.player1Name = "X";
                 Playernames.player2Name = "O";
-                Game loadGame = new Game();
-                //This is important. With this piece of code the Window gets centered               
-                loadGame.StartPosition = FormStartPosition.CenterScreen;
-                loadGame.Show();
                 Hide();
+                loadGame.Show();                
             }
         }
         //If the user clicked on the Credits-Button, hide the Menu and open the credit form
         private void Credits_Click(object sender, EventArgs e)
-        { 
-            //Load every IInformation from Credits into openCredits
+        {
+            //Load Class
             Credits openCredits = new Credits();
-            //This is important. With this piece of code the Window gets centered               
+            //Center Window
             openCredits.StartPosition = FormStartPosition.CenterScreen;
             openCredits.Show();
             //Hide Mainform
@@ -60,13 +58,48 @@ namespace Tic_Tac_Toe_WF
 
         private void changelog_Click(object sender, EventArgs e)
         {
-            //Load the PDF a bit before the UI gets called
             Changelog loadChangelog = new Changelog();
-            loadChangelog.changelog_browser.Navigate("http://puu.sh/oSCFr/7e47c74977.png");
-            //We don't need to center this, we did it already in the Window prefs!
+            //We now load the Changelog trough a file! Thanks to Patrick for the Idea!
+            loadChangelog.changelog_box.Text = Properties.Resources.changelog;
             //Call the UI
             loadChangelog.Show();
 
+        }
+
+        private void options_Click(object sender, EventArgs e)
+        {
+            //TODO: Put into method
+            //First Create the Directory. It will NOT be created if its there already!
+            Directory.CreateDirectory(@"C:\Ultimate Tic-Tac-Toe\Audios");
+            //Check the Directory for files
+            string[] dFiles = Directory.GetFiles(@"C:\Ultimate Tic-Tac-Toe\Audios");
+            //Convert the Content into a String
+            string fCount = dFiles.Length.ToString();
+            //If we have have 4 files, we dont need to Open the Download Window
+            if (fCount != "4")
+            {
+                //True means you really want to get into the Options, otherwise the "You need to Download" PopUp shows every time
+                Properties.Settings.Default.options_clicked = true;
+                Options loadOptions = new Options();
+                loadOptions.ShowDialog();
+            }
+            else
+            {
+                //True means you really want to get into the Options, otherwise the "You need to Download" PopUp shows every time
+                Properties.Settings.Default.options_clicked = false;
+                Options loadOptions = new Options();
+                loadOptions.Positions();
+                loadOptions.ShowDialog();
+            }
+        }
+
+        private void bugs_button_Click(object sender, EventArgs e)
+        {
+            Bugs loadBugs = new Bugs();
+            //We now load the Changelog trough a file! Thanks to Patrick for the Idea!
+            loadBugs.bugs_text.Text = Properties.Resources.bugs;
+            //Call the UI
+            loadBugs.Show();
         }
     }
 }

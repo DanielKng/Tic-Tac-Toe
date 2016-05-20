@@ -22,7 +22,7 @@ namespace Tic_Tac_Toe_WF.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Tic_Tac_Toe_WF.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Tic_Tac_Toe_WF.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Tic_Tac_Toe_WF.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,11 +61,41 @@ namespace Tic_Tac_Toe_WF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This list gets updated every release!
+        ///
+        ///1. If you play against the AI and create a new Game, the AI is a normal player
+        ///2. Score a Draw against the KI and you get a Error-Message.
+        /// </summary>
+        public static string bugs {
+            get {
+                return ResourceManager.GetString("bugs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to v-0.1.85-beta
+        ///	- Added a AI. To activate the AI, hover your mouse above the v-1.85-beta label,
+        ///	  until you see the Text-cursor and type &quot;ai_enable&quot;. Now click &quot;Start&quot;.
+        ///
+        ///	- Added and Optimized Bugfixes for Issue #3, #4, #5 and #6
+        ///	- New Winningscreen UI. You now can Exit, Reset and Restart your Game from it
+        ///	- New losing screen. Gone is the annyoing Message, now you have a annoying Animation!
+        ///	- Small AI Easteregg (It&apos;s obviously - for now!)
+        ///	- The Changelog is now a embedded Resource
+        ///	- Code is no [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string changelog {
+            get {
+                return ResourceManager.GetString("changelog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Confetti {
+        public static System.Drawing.Bitmap checkbox_disable {
             get {
-                object obj = ResourceManager.GetObject("Confetti", resourceCulture);
+                object obj = ResourceManager.GetObject("checkbox_disable", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,7 +103,7 @@ namespace Tic_Tac_Toe_WF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Game {
+        public static System.Drawing.Bitmap Game {
             get {
                 object obj = ResourceManager.GetObject("Game", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +113,7 @@ namespace Tic_Tac_Toe_WF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Game_Over {
+        public static System.Drawing.Bitmap Game_Over {
             get {
                 object obj = ResourceManager.GetObject("Game_Over", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +123,7 @@ namespace Tic_Tac_Toe_WF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Header {
+        public static System.Drawing.Bitmap Header {
             get {
                 object obj = ResourceManager.GetObject("Header", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,9 +133,19 @@ namespace Tic_Tac_Toe_WF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Main {
+        public static System.Drawing.Bitmap Main {
             get {
                 object obj = ResourceManager.GetObject("Main", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap winner {
+            get {
+                object obj = ResourceManager.GetObject("winner", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

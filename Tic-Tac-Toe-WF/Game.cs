@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -11,32 +12,211 @@ using System.Windows.Forms;
 namespace Tic_Tac_Toe_WF
 {
     public partial class Game : Form
-    {      
+    {
         //If true = X if false = O
         public bool player = true;
         public int playerSteps = 0;
+        
         public int player1Stats = 0;
         public int player2Stats = 0;
+        //Loading needed Stuff
+        Form1 loadMain = new Form1();
+        Options loadOptions = new Options();
+        //Now it gets interesting! Adding the AI!
+        public bool ai_enable = false;
         public Game()
         {
             InitializeComponent();
-            //Shows the name of the starting player
-            PlayerTurnValue = "It's your turn, " + Playernames.player1Name;
         }
         private void Game_Load(object sender, EventArgs e)
         {
             //Set the Playername
             player1_label.Text = "Player " + Playernames.player1Name;
             player2_label.Text = "Player " + Playernames.player2Name;
+            if (Playernames.player2Name == "Computer")
+            {
+                player2_label.Text = "1337 Cheater";
+                //Bugfix for https://github.com/DanielKng/Tic-Tac-Toe/issues/9
+                PlayerTurnValue = "It's your turn, " + Playernames.player1Name;
+            }
+            else if (player)
+            {
+                //Bugfix for https://github.com/DanielKng/Tic-Tac-Toe/issues/9
+                PlayerTurnValue = "It's your turn, " + Playernames.player1Name;
+            }
             //Shows how often Player XY won
-            player1_stats_counter.Text = "won " + player1Stats.ToString() + " time(s)";
-            player2_stats_counter.Text = "won " + player2Stats.ToString() + " time(s)";
+            player1_stats_counter.Text = "won " + Properties.Settings.Default.player_1_stats + " time(s)";
+            player2_stats_counter.Text = "won " + Properties.Settings.Default.player_2_stats + " time(s)";
         }
         public string PlayerTurnValue
         {
             get { return player_turn.Text; }
             set { player_turn.Text = value; }
         }
+        //AI Logic
+        private void ai_move()
+        {
+            //priority 1:  get tic tac toe
+            //priority 2:  block x tic tac toe
+            //priority 3:  go for corner space
+            //priority 4:  pick open space
+
+            Button move = null;
+
+            //look for tic tac toe opportunities
+            move = win_or_block("O"); //look for win
+            if (move == null)
+            {
+                move = win_or_block("X"); //look for block
+                if (move == null)
+                {
+                    move = open_corner();
+                    if (move == null)
+                    {
+                        move = free_field();
+                    }
+                }
+            }
+
+            move.PerformClick();
+        }
+
+        private Button free_field()
+        {
+            Button b = null;
+            foreach (Control c in Controls)
+            {
+                b = c as Button;
+                if (b != null)
+                {
+                    if (b.Text == "")
+                        return b;
+                }//end if
+            }//end if
+
+            return null;
+        }
+
+        private Button open_corner()
+        {
+            if (A1.Text == "O")
+            {
+                if (A3.Text == "")
+                    return A3;
+                if (C3.Text == "")
+                    return C3;
+                if (C1.Text == "")
+                    return C1;
+            }
+
+            if (A3.Text == "O")
+            {
+                if (A1.Text == "")
+                    return A1;
+                if (C3.Text == "")
+                    return C3;
+                if (C1.Text == "")
+                    return C1;
+            }
+
+            if (C3.Text == "O")
+            {
+                if (A1.Text == "")
+                    return A3;
+                if (A3.Text == "")
+                    return A3;
+                if (C1.Text == "")
+                    return C1;
+            }
+
+            if (C1.Text == "O")
+            {
+                if (A1.Text == "")
+                    return A3;
+                if (A3.Text == "")
+                    return A3;
+                if (C3.Text == "")
+                    return C3;
+            }
+
+            if (A1.Text == "")
+                return A1;
+            if (A3.Text == "")
+                return A3;
+            if (C1.Text == "")
+                return C1;
+            if (C3.Text == "")
+                return C3;
+
+            return null;
+        }
+
+        private Button win_or_block(string mark)
+        {
+            //HORIZONTAL TESTS
+            if ((A1.Text == mark) && (A2.Text == mark) && (A3.Text == ""))
+                return A3;
+            if ((A2.Text == mark) && (A3.Text == mark) && (A1.Text == ""))
+                return A1;
+            if ((A1.Text == mark) && (A3.Text == mark) && (A2.Text == ""))
+                return A2;
+
+            if ((B1.Text == mark) && (B2.Text == mark) && (B3.Text == ""))
+                return B3;
+            if ((B2.Text == mark) && (B3.Text == mark) && (B1.Text == ""))
+                return B1;
+            if ((B1.Text == mark) && (B3.Text == mark) && (B2.Text == ""))
+                return B2;
+
+            if ((C1.Text == mark) && (C2.Text == mark) && (C3.Text == ""))
+                return C3;
+            if ((C2.Text == mark) && (C3.Text == mark) && (C1.Text == ""))
+                return C1;
+            if ((C1.Text == mark) && (C3.Text == mark) && (C2.Text == ""))
+                return C2;
+
+            //VERTICAL TESTS
+            if ((A1.Text == mark) && (B1.Text == mark) && (C1.Text == ""))
+                return C1;
+            if ((B1.Text == mark) && (C1.Text == mark) && (A1.Text == ""))
+                return A1;
+            if ((A1.Text == mark) && (C1.Text == mark) && (B1.Text == ""))
+                return B1;
+
+            if ((A2.Text == mark) && (B2.Text == mark) && (C2.Text == ""))
+                return C2;
+            if ((B2.Text == mark) && (C2.Text == mark) && (A2.Text == ""))
+                return A2;
+            if ((A2.Text == mark) && (C2.Text == mark) && (B2.Text == ""))
+                return B2;
+
+            if ((A3.Text == mark) && (B3.Text == mark) && (C3.Text == ""))
+                return C3;
+            if ((B3.Text == mark) && (C3.Text == mark) && (A3.Text == ""))
+                return A3;
+            if ((A3.Text == mark) && (C3.Text == mark) && (B3.Text == ""))
+                return B3;
+
+            //DIAGONAL TESTS
+            if ((A1.Text == mark) && (B2.Text == mark) && (C3.Text == ""))
+                return C3;
+            if ((B2.Text == mark) && (C3.Text == mark) && (A1.Text == ""))
+                return A1;
+            if ((A1.Text == mark) && (C3.Text == mark) && (B2.Text == ""))
+                return B2;
+
+            if ((A3.Text == mark) && (B2.Text == mark) && (C1.Text == ""))
+                return C1;
+            if ((B2.Text == mark) && (C1.Text == mark) && (A3.Text == ""))
+                return A3;
+            if ((A3.Text == mark) && (C1.Text == mark) && (B2.Text == ""))
+                return B2;
+            //This should never be reached, but its neccesary!
+            else
+            {
+                return null;
+            }
+        }//AI Logic END
         private void button_click(object sender, EventArgs e)
         {
             if (Playernames.player1Name != "X" && Playernames.player2Name != "O")
@@ -75,6 +255,12 @@ namespace Tic_Tac_Toe_WF
                     buttons.Text = "X";
                     PlayerTurnValue = "It's your turn, " + Playernames.player2Name;
                 }
+                //This is the AI stat
+                else if (Playernames.player1Name == "X" && Playernames.player2Name == "AI")
+                {
+                    buttons.Text = "A";
+                    PlayerTurnValue = "It's your turn, " + Playernames.player1Name;
+                }
                 else
                 {
                     //False! Player O!
@@ -90,6 +276,10 @@ namespace Tic_Tac_Toe_WF
             playerSteps++;
             //Check for the Winner after every Step!
             CheckWinner();
+            if ((!player) && ai_enable)
+            {
+                ai_move();
+            }
         }
         //As the Worksheet says: Check every possible end. Vertical, Horizontal, etc
         private void CheckWinner()
@@ -141,39 +331,55 @@ namespace Tic_Tac_Toe_WF
             //Check for winners
             if (winner)
             {
+                
+
                 //Player True, O won
                 if (player)
                 {
+                    
                     //We need to increase the Stats first
-                    player2Stats++;
+                    Properties.Settings.Default.player_2_stats = Properties.Settings.Default.player_2_stats + 1;
                     //Shows how often Player XY won
-                    player2_stats_counter.Text = "won " + player2Stats.ToString() + " time(s)";
+                    player2_stats_counter.Text = "won " + Properties.Settings.Default.player_2_stats + " time(s)";
+
                     //Shows the winner Animation and changes the Text to the Winning player
-                    Winscreen loadWinscreen = new Winscreen(this);
                     //Changes the "Value" and therefore the content in the Textbox from Winscreen.cs
+                    //INPORTANT TO CLOSE THE WINDOW TROUGH THE NEW GAME BUTTON!
+                    Winscreen loadWinscreen = new Winscreen(this);
                     loadWinscreen.TextBoxValue = Playernames.player2Name + " wins! Congratulations!";
-                    loadWinscreen.Show();
+                    loadWinscreen.StartPosition = FormStartPosition.CenterScreen;
+                    //Playing the Sound
+                    if (Properties.Settings.Default.enable_sounds)
+                    {
+                        SoundPlayer snd = new SoundPlayer(loadOptions.fileName_win);
+                        snd.Play();
+                    }
+                    loadWinscreen.ShowDialog();
                     //Github Issue #3 https://github.com/DanielKng/Tic-Tac-Toe/issues/3
                     DisableWinButton();
-                    this.Close();
                 }
-                //Is it false, Player O won
+                //Is it false, Player X won
                 else
                 {
                     //Increasing the Stats here also
-                    player1Stats++;
+                    Properties.Settings.Default.player_1_stats++;
                     //Shows how often Player XY won
-                    player1_stats_counter.Text = "won " + player1Stats.ToString() + " time(s)";
+                    player1_stats_counter.Text = "won " + Properties.Settings.Default.player_1_stats + " time(s)";
                     //Shows the winner Animation and changes the Text to the Winning player
+                    //INPORTANT TO CLOSE THE WINDOW TROUGH THE NEW GAME BUTTON!
                     Winscreen loadWinscreen = new Winscreen(this);
                     //Changes the "Value" and therefore the content in the Textbox from Winscreen.cs
                     loadWinscreen.TextBoxValue = Playernames.player1Name + " wins! Congratulations!";
                     loadWinscreen.StartPosition = FormStartPosition.CenterScreen;
-                    //Why Dialog? Because this should act like a Dialog
+                    //Play Sound
+                    if (Properties.Settings.Default.enable_sounds)
+                    {
+                        SoundPlayer snd = new SoundPlayer(loadOptions.fileName_win);
+                        snd.Play();
+                    }
                     loadWinscreen.ShowDialog();
                     //Github Issue #3 https://github.com/DanielKng/Tic-Tac-Toe/issues/3
                     DisableWinButton();
-                    
                 }
             }
             else
@@ -184,6 +390,11 @@ namespace Tic_Tac_Toe_WF
                     GameOver_Screen loadGameOver = new GameOver_Screen();
                     //Center Screen
                     loadGameOver.StartPosition = FormStartPosition.CenterScreen;
+                    if (Properties.Settings.Default.enable_sounds)
+                    {
+                        SoundPlayer snd = new SoundPlayer(loadOptions.fileName_lose);
+                        snd.Play();
+                    }
                     loadGameOver.Show();
                     //Github Issue #3 https://github.com/DanielKng/Tic-Tac-Toe/issues/3
                     DisableWinButton();
@@ -222,11 +433,11 @@ namespace Tic_Tac_Toe_WF
             if (change_names.Checked && stat_reset_checkbox.Checked)
             {
                 //Reset the Stats!
-                player1Stats = 0;
-                player2Stats = 0;
+                Properties.Settings.Default.player_1_stats = 0;
+                Properties.Settings.Default.player_2_stats = 0;
                 //Show the new Stats
-                player1_stats_counter.Text = player1Stats.ToString();
-                player2_stats_counter.Text = player2Stats.ToString();
+                player1_stats_counter.Text = Properties.Settings.Default.player_1_stats.ToString();
+                player2_stats_counter.Text = Properties.Settings.Default.player_2_stats.ToString();
                 //Open up the UI 
                 Playernames loadPlayernames = new Playernames();
                 //Center
@@ -246,11 +457,11 @@ namespace Tic_Tac_Toe_WF
             else if (stat_reset_checkbox.Checked)
             {
                 //Reset the Stats!
-                player1Stats = 0;
-                player2Stats = 0;
+                Properties.Settings.Default.player_1_stats = 0;
+                Properties.Settings.Default.player_2_stats = 0;
                 //Shows how often Player XY won
-                player1_stats_counter.Text = "won " + player1Stats.ToString() + " time(s)";
-                player2_stats_counter.Text = "won " + player2Stats.ToString() + " time(s)";
+                player1_stats_counter.Text = "won " + Properties.Settings.Default.player_1_stats + " time(s)";
+                player2_stats_counter.Text = "won " + Properties.Settings.Default.player_2_stats + " time(s)";
                 //Reset which Player is next
                 player = true;
                 //Reset how many clicks are done
@@ -267,7 +478,7 @@ namespace Tic_Tac_Toe_WF
                         b.Text = "";
                         //Because the Text on the other Buttons gets reset too, we have to rewrite them!
                         New_Game.Text = "New Game";
-                        Exit_Game.Text = "Exit";
+                        Exit_Game.Text = "Back";
                     }
                     catch { }
                 }
@@ -285,11 +496,11 @@ namespace Tic_Tac_Toe_WF
                     try
                     {
                         //Reset the Stats!
-                        player1Stats = 0;
-                        player2Stats = 0;
+                        Properties.Settings.Default.player_1_stats = 0;
+                        Properties.Settings.Default.player_2_stats = 0;
                         //Shows how often Player XY won
-                        player1_stats_counter.Text = "won " + player1Stats.ToString() + " time(s)";
-                        player2_stats_counter.Text = "won " + player2Stats.ToString() + " time(s)";
+                        player1_stats_counter.Text = "won " + Properties.Settings.Default.player_1_stats + " time(s)";
+                        player2_stats_counter.Text = "won " + Properties.Settings.Default.player_2_stats + " time(s)";
                         Button b = (Button)c;
                         //Re-Enable all Buttons
                         b.Enabled = true;
@@ -297,7 +508,7 @@ namespace Tic_Tac_Toe_WF
                         b.Text = "";
                         //Because the Text on the other Buttons gets reset too, we have to rewrite them!
                         New_Game.Text = "New Game";
-                        Exit_Game.Text = "Exit";
+                        Exit_Game.Text = "Back";
                     }
                     catch { }
                 }
@@ -305,7 +516,8 @@ namespace Tic_Tac_Toe_WF
         }
         private void Exit_Game_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
+            loadMain.Show();
         }
     }
 }
