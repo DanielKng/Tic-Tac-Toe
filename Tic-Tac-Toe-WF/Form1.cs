@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.IO;
-using System.Media;
-using System.Drawing;
-using System.Security.Permissions;
+using System.Windows.Forms;
 
 namespace Tic_Tac_Toe_WF
 {
@@ -13,7 +10,6 @@ namespace Tic_Tac_Toe_WF
         {
             InitializeComponent();
         }
-
 
         private void Start_Click(object sender, EventArgs e)
         {
@@ -36,9 +32,10 @@ namespace Tic_Tac_Toe_WF
                 Playernames.player1Name = "X";
                 Playernames.player2Name = "O";
                 Hide();
-                loadGame.Show();                
+                loadGame.Show();
             }
         }
+
         //If the user clicked on the Credits-Button, hide the Menu and open the credit form
         private void Credits_Click(object sender, EventArgs e)
         {
@@ -50,6 +47,7 @@ namespace Tic_Tac_Toe_WF
             //Hide Mainform
             this.Hide();
         }
+
         //If clicked on Exit, Shutdown the Application
         private void Exit_Click(object sender, EventArgs e)
         {
@@ -63,7 +61,6 @@ namespace Tic_Tac_Toe_WF
             loadChangelog.changelog_box.Text = Properties.Resources.changelog;
             //Call the UI
             loadChangelog.Show();
-
         }
 
         private void options_Click(object sender, EventArgs e)

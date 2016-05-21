@@ -10,21 +10,25 @@ namespace Tic_Tac_Toe_WF
 {
     public partial class Options : Form
     {
-
         //Where to get the files?
-        string remoteUri_dark = "https://www.dropbox.com/s/eww4jlt6z64j15h/dark_mode_music.wav?dl=1";
-        string remoteUri_standard = "https://www.dropbox.com/s/9qjfih3ppksqmer/standard_mode_enabled.wav?dl=1";
-        string remoteUri_win = "https://www.dropbox.com/s/87727v027oiny08/win_sound.wav?dl=1";
-        string remoteUri_lose = "https://www.dropbox.com/s/la7nx6f6471b16k/lose_sound.wav?dl=1";
+        private string remoteUri_dark = "https://www.dropbox.com/s/eww4jlt6z64j15h/dark_mode_music.wav?dl=1";
+
+        private string remoteUri_standard = "https://www.dropbox.com/s/9qjfih3ppksqmer/standard_mode_enabled.wav?dl=1";
+        private string remoteUri_win = "https://www.dropbox.com/s/87727v027oiny08/win_sound.wav?dl=1";
+        private string remoteUri_lose = "https://www.dropbox.com/s/la7nx6f6471b16k/lose_sound.wav?dl=1";
+
         //Where to save?
         public string fileName_dark = @"C:\Ultimate Tic-Tac-Toe\Audios\dark_mode_music.wav";
+
         public string fileName_standard = @"C:\Ultimate Tic-Tac-Toe\Audios\standard_mode_music.wav";
         public string fileName_win = @"C:\Ultimate Tic-Tac-Toe\Audios\win_sound.wav";
         public string fileName_lose = @"C:\Ultimate Tic-Tac-Toe\Audios\lose_sound.wav";
         public string path = @"C:\Ultimate Tic-Tac-Toe\Audios\";
+
         //Standard variable for the Message Box
-        bool download_no = true;
-        Form1 loadMain = new Form1();
+        private bool download_no = true;
+
+        private Form1 loadMain = new Form1();
 
         public Options()
         {
@@ -102,11 +106,13 @@ namespace Tic_Tac_Toe_WF
                 Positions();
             }
         }
+
         private void CheckboxesDisabel()
         {
             Checkboxes_Disabled loadCheckboxEasteregg = new Checkboxes_Disabled();
             loadCheckboxEasteregg.ShowDialog();
         }
+
         private void apply_options_Click(object sender, EventArgs e)
         {
             choose_color_player1_SelectedIndexChanged();
@@ -165,9 +171,9 @@ namespace Tic_Tac_Toe_WF
                 Properties.Settings.Default.enable_sounds = true;
                 Close();
             }
-            else if(enable_darkmode.Checked && download_no)
+            else if (enable_darkmode.Checked && download_no)
             {
-                SoundPlayer snd= new SoundPlayer(fileName_dark);
+                SoundPlayer snd = new SoundPlayer(fileName_dark);
                 PlayMusic(snd);
                 Close();
             }
@@ -225,6 +231,7 @@ namespace Tic_Tac_Toe_WF
                 Close();
             }
         }
+
         public void Positions()
         {
             //Hide the Warning
@@ -233,7 +240,7 @@ namespace Tic_Tac_Toe_WF
             choose_color_player2.Visible = true;
             //Options can be smaller now
             Size = new Size(231, 320);
-            //New Poitions 
+            //New Poitions
             enable_music.Location = new Point(69, 36);
             //Since we hide the Warning, we have more Space to work, but we want a small Menu, so move stuff around
             enable_sound.Location = new Point(69, 75);
@@ -243,17 +250,20 @@ namespace Tic_Tac_Toe_WF
             back_button.Location = new Point(12, 250);
             apply_options.Location = new Point(115, 250);
         }
+
         private void StopMusic(SoundPlayer snd)
         {
-            if(!Properties.Settings.Default.enable_music || !Properties.Settings.Default.enable_sounds || !Properties.Settings.Default.darkmode_checked)
-            { 
+            if (!Properties.Settings.Default.enable_music || !Properties.Settings.Default.enable_sounds || !Properties.Settings.Default.darkmode_checked)
+            {
                 snd.Stop();
             }
         }
+
         private async Task PlayMusic(SoundPlayer snd)
         {
             snd.Play();
         }
+
         private void back_button_Click_1(object sender, EventArgs e)
         {
             Properties.Settings.Default.enable_music = false;
@@ -331,7 +341,5 @@ namespace Tic_Tac_Toe_WF
                 Properties.Settings.Default.color_playerO = Color.Brown;
             }
         }
-
-        
     }
 }

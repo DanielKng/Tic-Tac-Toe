@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Tic_Tac_Toe_WF
@@ -16,12 +9,14 @@ namespace Tic_Tac_Toe_WF
         {
             InitializeComponent();
         }
+
         //Checks if "Exit" is pressed
         private void Exit_Click(object sender, EventArgs e)
         {
             //Exit the Application
             Application.Exit();
         }
+
         //If the User clicked on back, open up the MainMenu
         private void Back_Click(object sender, EventArgs e)
         {
