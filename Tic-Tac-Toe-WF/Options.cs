@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Media;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -40,6 +35,7 @@ namespace Tic_Tac_Toe_WF
             //THis only happens if you clicked on the Option Button!
             if (fCount != "4" && Properties.Settings.Default.options_clicked)
             {
+                MessageBox.Show("Test");
                 CheckForFiles();
             }
         }

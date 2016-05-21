@@ -27,10 +27,10 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="color_playerX" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">ControlLight</Value>
     </Setting>
     <Setting Name="color_playerO" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">ControlLight</Value>
     </Setting>
   </Settings>
 </SettingsFile>
