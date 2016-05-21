@@ -1,5 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
 using System.Media;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Tic_Tac_Toe_WF
@@ -8,25 +15,19 @@ namespace Tic_Tac_Toe_WF
     {
         //If true = X if false = O
         public bool player = true;
-
         public int playerSteps = 0;
-
+        
         public int player1Stats = 0;
         public int player2Stats = 0;
-
         //Loading needed Stuff
-        private Form1 loadMain = new Form1();
-
-        private Options loadOptions = new Options();
-
+        Form1 loadMain = new Form1();
+        Options loadOptions = new Options();
         //Now it gets interesting! Adding the AI!
         public bool ai_enable = false;
-
         public Game()
         {
             InitializeComponent();
         }
-
         private void Game_Load(object sender, EventArgs e)
         {
             //Set the Playername
@@ -47,13 +48,11 @@ namespace Tic_Tac_Toe_WF
             player1_stats_counter.Text = "won " + Properties.Settings.Default.player_1_stats + " time(s)";
             player2_stats_counter.Text = "won " + Properties.Settings.Default.player_2_stats + " time(s)";
         }
-
         public string PlayerTurnValue
         {
             get { return player_turn.Text; }
             set { player_turn.Text = value; }
         }
-
         //AI Logic
         private void ai_move()
         {
@@ -218,7 +217,6 @@ namespace Tic_Tac_Toe_WF
                 return null;
             }
         }//AI Logic END
-
         private void button_click(object sender, EventArgs e)
         {
             if (Playernames.player1Name != "X" && Playernames.player2Name != "O")
@@ -234,6 +232,7 @@ namespace Tic_Tac_Toe_WF
                     buttonsFirst.Text = firstLetterP1;
                     //Which turn is it?
                     PlayerTurnValue = "It's your turn, " + Playernames.player2Name;
+
                 }
                 else
                 {
@@ -245,6 +244,7 @@ namespace Tic_Tac_Toe_WF
                     //Which turn?
                     PlayerTurnValue = "It's your turn, " + Playernames.player1Name;
                 }
+
             }
             //Sends a Cast to buttons
             Button buttons = (Button)sender;
@@ -253,7 +253,7 @@ namespace Tic_Tac_Toe_WF
                 //Checks which bool is set, and sets the Button Text
                 if (player)
                 {
-                    buttons.BackColor = Properties.Settings.Default.color_playerX;
+                    buttons.BackColor = Properties.Settings.Default.color_playerX;                    
                     buttons.Text = "X";
                     PlayerTurnValue = "It's your turn, " + Playernames.player2Name;
                 }
@@ -267,7 +267,7 @@ namespace Tic_Tac_Toe_WF
                 else
                 {
                     //False! Player O!
-                    buttons.BackColor = Properties.Settings.Default.color_playerO;
+                    buttons.BackColor = Properties.Settings.Default.color_playerO; 
                     buttons.Text = "O";
                     PlayerTurnValue = "It's your turn, " + Playernames.player1Name;
                 }
@@ -285,7 +285,6 @@ namespace Tic_Tac_Toe_WF
                 ai_move();
             }
         }
-
         //As the Worksheet says: Check every possible end. Vertical, Horizontal, etc
         private void CheckWinner()
         {
@@ -299,6 +298,7 @@ namespace Tic_Tac_Toe_WF
             {
                 winner = true;
             }
+
             else if ((B1.Text == B2.Text) && (B2.Text == B3.Text) && (!B1.Enabled))
             {
                 winner = true;
@@ -313,6 +313,7 @@ namespace Tic_Tac_Toe_WF
             {
                 winner = true;
             }
+
             else if ((A2.Text == B2.Text) && (B2.Text == C2.Text) && (!A2.Enabled))
             {
                 winner = true;
@@ -334,9 +335,12 @@ namespace Tic_Tac_Toe_WF
             //Check for winners
             if (winner)
             {
+                
+
                 //Player True, O won
                 if (player)
                 {
+                    
                     //We need to increase the Stats first
                     Properties.Settings.Default.player_2_stats = Properties.Settings.Default.player_2_stats + 1;
                     //Shows how often Player XY won
@@ -426,7 +430,6 @@ namespace Tic_Tac_Toe_WF
                 catch { }
             }
         }
-
         //If you click on "New Game"
         private void New_Game_Click(object sender, EventArgs e)
         {
@@ -439,7 +442,7 @@ namespace Tic_Tac_Toe_WF
                 //Show the new Stats
                 player1_stats_counter.Text = Properties.Settings.Default.player_1_stats.ToString();
                 player2_stats_counter.Text = Properties.Settings.Default.player_2_stats.ToString();
-                //Open up the UI
+                //Open up the UI 
                 Playernames loadPlayernames = new Playernames();
                 //Center
                 loadPlayernames.StartPosition = FormStartPosition.CenterScreen;
@@ -448,7 +451,7 @@ namespace Tic_Tac_Toe_WF
             }
             else if (change_names.Checked)
             {
-                //Open up the UI
+                //Open up the UI 
                 Playernames loadPlayernames = new Playernames();
                 //Center
                 loadPlayernames.StartPosition = FormStartPosition.CenterScreen;
@@ -508,7 +511,7 @@ namespace Tic_Tac_Toe_WF
                         C1.BackColor = DefaultBackColor;
                         C2.BackColor = DefaultBackColor;
                         C3.BackColor = DefaultBackColor;
-
+                        
                         //Shows how often Player XY won
                         player1_stats_counter.Text = "won " + Properties.Settings.Default.player_1_stats + " time(s)";
                         player2_stats_counter.Text = "won " + Properties.Settings.Default.player_2_stats + " time(s)";
@@ -525,7 +528,6 @@ namespace Tic_Tac_Toe_WF
                 }
             }
         }
-
         private void Exit_Game_Click(object sender, EventArgs e)
         {
             Close();
@@ -533,3 +535,4 @@ namespace Tic_Tac_Toe_WF
         }
     }
 }
+

@@ -1,6 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Tic_Tac_Toe_WF
 {
@@ -8,8 +15,7 @@ namespace Tic_Tac_Toe_WF
     {
         public static string player1Name = "";
         public static string player2Name = "";
-        private Game loadGame = new Game();
-
+        Game loadGame = new Game();
         public Playernames()
         {
             InitializeComponent();
@@ -27,6 +33,8 @@ namespace Tic_Tac_Toe_WF
             //player1Name = player1Name.ToUpper();
             //player2Name = player2Name.ToUpper();
 
+            
+
             //Check if the Boxes contain any letters, if they contain anything else than letters or nothing - Error
             //true if it doesn't contain letters
             //Bugfix for https://github.com/DanielKng/Tic-Tac-Toe/issues/6 and https://github.com/DanielKng/Tic-Tac-Toe/issues/5
@@ -35,7 +43,7 @@ namespace Tic_Tac_Toe_WF
             //IF the result is true, one or both of the Textboxes does contain special characters or a space without letters
 
             //even if you put in a name in "Player 2 Textbox" it will get deleted here if you enabled the AI
-            if (ai_activate.Checked)
+            if(ai_activate.Checked)
             {
                 player2Name = "";
             }
@@ -47,6 +55,7 @@ namespace Tic_Tac_Toe_WF
             }
             //Bugfix for https://github.com/DanielKng/Tic-Tac-Toe/issues/6 and https://github.com/DanielKng/Tic-Tac-Toe/issues/5
             //If the String is empty
+
             else if (string.IsNullOrEmpty(player1Name) || string.IsNullOrEmpty(player2Name) || string.IsNullOrEmpty(player1Name) && string.IsNullOrEmpty(player2Name))
             {
                 if (ai_activate.Checked)                    //if you enabled the AI "Player 2 Name" will changed to "Computer"
@@ -66,7 +75,7 @@ namespace Tic_Tac_Toe_WF
             else
             {
                 //Load the Game
-                //This is important. With this piece of code the Window gets centered and is at the same place as all other Windows!
+                //This is important. With this piece of code the Window gets centered and is at the same place as all other Windows!               
                 loadGame.StartPosition = FormStartPosition.CenterScreen;
                 loadGame.Show();
                 this.Hide();

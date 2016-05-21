@@ -1,4 +1,10 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -11,8 +17,7 @@ namespace Tic_Tac_Toe_WF
             InitializeComponent();
             Blink();
         }
-
-        private async void Blink()
+            private async void Blink()
         {
             while (true)
             {
