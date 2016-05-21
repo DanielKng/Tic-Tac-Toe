@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
 
 namespace Tic_Tac_Toe_WF
 {
@@ -15,7 +8,8 @@ namespace Tic_Tac_Toe_WF
     {
         public static string player1Name = "";
         public static string player2Name = "";
-        Game loadGame = new Game();
+        private Game loadGame = new Game();
+
         public Playernames()
         {
             InitializeComponent();
@@ -32,8 +26,6 @@ namespace Tic_Tac_Toe_WF
 
             //player1Name = player1Name.ToUpper();
             //player2Name = player2Name.ToUpper();
-
-
 
             //Check if the Boxes contain any letters, if they contain anything else than letters or nothing - Error
             //true if it doesn't contain letters
@@ -59,7 +51,6 @@ namespace Tic_Tac_Toe_WF
 
             //Bugfix for https://github.com/DanielKng/Tic-Tac-Toe/issues/6 and https://github.com/DanielKng/Tic-Tac-Toe/issues/5
             //If the String is empty
-
             else if (string.IsNullOrEmpty(player1Name) || string.IsNullOrEmpty(player2Name) || string.IsNullOrEmpty(player1Name) && string.IsNullOrEmpty(player2Name))
             {
                 if (ai_activate.Checked)                    //if you enabled the AI "Player 2 Name" will changed to "Computer"
@@ -79,13 +70,11 @@ namespace Tic_Tac_Toe_WF
             else
             {
                 //Load the Game
-                //This is important. With this piece of code the Window gets centered and is at the same place as all other Windows!               
+                //This is important. With this piece of code the Window gets centered and is at the same place as all other Windows!
                 loadGame.StartPosition = FormStartPosition.CenterScreen;
                 loadGame.Show();
                 this.Hide();
             }
-
-
         }
 
         private void ai_activate_CheckedChanged(object sender, EventArgs e)     //if you click the Checkbox "ai_enable" you'll jump in here
