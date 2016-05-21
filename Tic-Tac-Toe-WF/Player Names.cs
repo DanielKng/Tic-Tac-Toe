@@ -33,7 +33,7 @@ namespace Tic_Tac_Toe_WF
             //player1Name = player1Name.ToUpper();
             //player2Name = player2Name.ToUpper();
 
-            
+
 
             //Check if the Boxes contain any letters, if they contain anything else than letters or nothing - Error
             //true if it doesn't contain letters
@@ -43,16 +43,20 @@ namespace Tic_Tac_Toe_WF
             //IF the result is true, one or both of the Textboxes does contain special characters or a space without letters
 
             //even if you put in a name in "Player 2 Textbox" it will get deleted here if you enabled the AI
-            if(ai_activate.Checked)
+            if (player1Name == "")
             {
-                player2Name = "";
+                result = true;
             }
-
             if (result)
             {
                 Player1.Text = "Error! Please use a valid name!";
-                Player2.Text = "Error! Please use a valid name!";
+
+                if (!ai_activate.Checked)
+                {
+                    Player2.Text = "Error! Please use a valid name!";
+                }
             }
+
             //Bugfix for https://github.com/DanielKng/Tic-Tac-Toe/issues/6 and https://github.com/DanielKng/Tic-Tac-Toe/issues/5
             //If the String is empty
 
@@ -80,6 +84,8 @@ namespace Tic_Tac_Toe_WF
                 loadGame.Show();
                 this.Hide();
             }
+
+
         }
 
         private void ai_activate_CheckedChanged(object sender, EventArgs e)     //if you click the Checkbox "ai_enable" you'll jump in here
@@ -87,6 +93,7 @@ namespace Tic_Tac_Toe_WF
             if (ai_activate.Checked)        //if you actiate the Checkbox, you diable the "Player 2 Textbox"
             {
                 Player2.Enabled = false;
+                Player2.Text = "";
             }
             else                            //if you deactivate the Checkbox, you enable the "Player 2 Textbox"
             {

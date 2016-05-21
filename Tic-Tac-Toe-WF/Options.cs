@@ -35,7 +35,6 @@ namespace Tic_Tac_Toe_WF
             //THis only happens if you clicked on the Option Button!
             if (fCount != "4" && Properties.Settings.Default.options_clicked)
             {
-                MessageBox.Show("Test");
                 CheckForFiles();
             }
         }

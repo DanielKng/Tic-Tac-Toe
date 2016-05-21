@@ -335,7 +335,6 @@ namespace Tic_Tac_Toe_WF
             //Check for winners
             if (winner)
             {
-                
 
                 //Player True, O won
                 if (player)
