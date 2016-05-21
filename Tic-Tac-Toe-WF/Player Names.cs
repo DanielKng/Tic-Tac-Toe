@@ -51,7 +51,7 @@ namespace Tic_Tac_Toe_WF
             {
                 Player1.Text = "Error! Please use a valid name!";
 
-                if (loadGame.ai_enable)
+                if (!ai_activate.Checked)
                 {
                     Player2.Text = "Error! Please use a valid name!";
                 }
