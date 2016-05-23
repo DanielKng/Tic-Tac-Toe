@@ -24,8 +24,8 @@ namespace Tic_Tac_Toe_WF
 
             //Use Uppercase only! ~ Deleted, because it looks ugly
 
-            //player1Name = player1Name.ToUpper();
-            //player2Name = player2Name.ToUpper();
+            player1Name = player1Name.ToUpper();
+            player2Name = player2Name.ToUpper();
 
             //Check if the Boxes contain any letters, if they contain anything else than letters or nothing - Error
             //true if it doesn't contain letters

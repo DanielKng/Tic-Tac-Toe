@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Media;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Tic_Tac_Toe_WF
@@ -63,6 +64,9 @@ namespace Tic_Tac_Toe_WF
             //priority 4:  pick open space
 
             Button move = null;
+
+            int milliseconds = 250;         //delay of 0.25 seconds
+            Thread.Sleep(milliseconds);
 
             //look for tic tac toe opportunities
             move = win_or_block("O"); //look for win
