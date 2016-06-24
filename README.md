@@ -18,12 +18,11 @@ The main task was to create a simple Tic-Tac-Toe game, which can handle all typi
 
 ## Upcoming Features
 - [X] Stats
-- [ ] Savegame
-- [ ] Colors
+- [X] Savegame
+- [X] Colors
 - [X] AI
-- [ ] Reworked Images
+- [X] Reworked Images
 - [X] Changelog
-- [ ] Eastereggs
 
 Some features, such as savegames, may seem useless - and they are. But this Project is more a learning task for me and others. So please keep that in mind!
 
